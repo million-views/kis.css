@@ -1,0 +1,20 @@
+@import "kiscss/theme";
+
+// Display the grid with colors
+// TODO: use variables from theme
+.flex.demo > div {
+  > span,
+  > div {
+    display: block;
+    padding: 0.3rem 0.3rem;
+    background: rgba($green, 0.6);
+    text-align: center;
+  }
+}
+
+.flex.demo > div:nth-child(2n) {
+  > span,
+  > div {
+    background: rgba($aqua, 0.6);
+  }
+}
