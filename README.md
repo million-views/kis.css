@@ -104,8 +104,8 @@ to integration. Each MVP we build can take a stable or release version of the
 library that can then evolve freely with the prototype. When we find repeating
 patterns that are reusable, we bring them back into the baseline.
 
-We have one stable branch and release-<semver> tags. Depending on the phase of
-the MVP, it can use git subtree to point to either stable or release-<semver>.
+We have one stable branch and release-semver tags. Depending on the phase of
+the MVP, it can use git subtree to point to either stable or release-semver.
 
 ### Using git subtree
 TBD
@@ -118,7 +118,7 @@ TBD
 - [ ] Iterate on mobile first css (as bugs get reported)
 
 ## Credits and attribution
-- [normalize.css] http://nicolasgallagher.com/about-normalize-css/
+- [normalize.css](http://nicolasgallagher.com/about-normalize-css/)
 - ```kitchen-sink.html``` came from [HiQ](https://github.com/jonathanharrell/hiq)
 - Most of the content for the test home page came from [PicnicCss](https://github.com/franciscop/picnic)
 - Inspiration and alignment to principles of simplicity came from HiQ and PicnicCSS
