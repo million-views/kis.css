@@ -100,12 +100,16 @@ $ npm install --global live-server
 
 ## Integrating kiscss in your application
 One of the design goals for kiscss is to support a "make it yours" approach
-to integration. Each MVP we build can take a stable or release version of the
-library that can then evolve freely with the prototype. When we find repeating
-patterns that are reusable, we bring them back into the baseline.
+to integration. Each MVP we build choses a released version of kiscss and
+adds a subtree of src/lib/kiscss to its baseline. From then on the intent
+is for this version of kiscss to evolve freely with the prototype, with no
+constraints on either having to push back or pull updates to kiscss.
 
-We have one stable branch and release-semver tags. Depending on the phase of
-the MVP, it can use git subtree to point to either stable or release-semver.
+The MVP can always point to a newer released version of kiscss if it choses
+to. This is akin to adding npm packages by using git urls. This method provides
+more explicit control of the process and integrates well with your bundler and
+gives more oportunities for optimization.
+
 
 ### Using git subtree
 TBD
