@@ -100,7 +100,7 @@ $ npm install --global live-server
 
 ## Integrating kiscss in your application
 One of the design goals for kiscss is to support a "make it yours" approach
-to integration. Each MVP we build choses a released version of kiscss and
+to integration. Each MVP we build chooses a released version of kiscss and
 adds a subtree of src/lib/kiscss to its baseline. From then on the intent
 is for this version of kiscss to evolve freely with the prototype, with no
 constraints on either having to push back or pull updates to kiscss.
