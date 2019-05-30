@@ -67,12 +67,10 @@ css libraries and references (on how to AND how not to) in creating kis.css:
 - https://material.io/develop/web/components/typography/
 - https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
 
-## Bugs in dependencies
-- [ ] [Preload hack for css breaks html-inline-css-plugin](https://github.com/Runjuu/html-inline-css-webpack-plugin/issues/10)
-
 ## Features
-- [x] Designed to make semantic html look good without classes
-- [x] Mobile first css
+- [x] Designed to make semantic html look good without classes (wip)
+- [x] Mobile first css (wip)
+- [x] Pure CSS to enable easy integration with popular reactive JS frameworks
 
 ## Development
 > If using [Yarn](https://yarnpkg.com/), `yarn` can replace all occurences
