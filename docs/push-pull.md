@@ -28,7 +28,7 @@ the job admirably if we stick to some conventions.
 # 4. Commit with a comment indicating release number
 # 5. Create a split tree and branch for test-build from release-to-test
 
-> #--- cleaning up previous release to test run artifactions
+> #--- cleaning up previous release to test run artifacts
 > git branch -D release-to-test
 > git branch -D test-build
 > #--- starting release to test run
@@ -72,7 +72,27 @@ Deleted branch test-build (was cfe4d7a).
 Deleted branch release-to-test (was 37bf510).
 ```
 
-# Push tagged release of lib/kiscss
+# Push stable/tagged release of lib/kiscss
+```shell
+# Once
+> git remote add -t master --no-tags stable git@github.com:million-views/kiscss.git
+
+
+```shell
+# Start:
+# 1. Make sure local master is in sync with remote
+# 2. Create a split tree and branch for 'release' from origin master
+# 3. checkout 'release' and sync with remote choosing local changes
+#    to take precedence
+#
+# NOTE: if you already have 'release' branch (from a prior run of
+#       this process, then replace '-b' with '--onto' below)
+
+> git subtree split --prefix=build --annotate '(stable) ' -b release
+> git checkout test-build
+> git pull --rebase --allow-unrelated-histories -X theirs stable master
+> git push stable release:master
+```
 
 # References
 - https://stackoverflow.com/questions/25576415/what-is-the-precise-meaning-of-ours-and-theirs-in-git
