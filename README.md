@@ -108,9 +108,8 @@ to. This is akin to adding npm packages by using git urls. This method provides
 more explicit control of the process and integrates well with your bundler and
 gives more oportunities for optimization.
 
+[See details on how to push (for maintainers) and pull (for users)](./docs/push-pull.md)
 
-### Using git subtree
-TBD
 
 ## TODO
 - [ ] Documentation (WIP, in the meantime take a look at the demo app)

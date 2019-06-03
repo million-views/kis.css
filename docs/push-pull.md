@@ -77,13 +77,13 @@ Deleted branch release-to-test (was 37bf510).
 # Once
 > git remote add -t master --no-tags stable git@github.com:million-views/kiscss.git
 
-
 ```shell
 # Start:
 # 1. Make sure local master is in sync with remote
 # 2. Create a split tree and branch for 'release' from origin master
 # 3. checkout 'release' and sync with remote choosing local changes
 #    to take precedence
+# 4. Also tag the release
 #
 # NOTE: if you already have 'release' branch (from a prior run of
 #       this process, then replace '-b' with '--onto' below)
@@ -92,10 +92,37 @@ Deleted branch release-to-test (was 37bf510).
 > git checkout test-build
 > git pull --rebase --allow-unrelated-histories -X theirs stable master
 > git push stable release:master
+> git tag -a kiscss-0.3.02 -m "First reusable cut"
+> git push stable kiscss-0.3.02
 ```
+
+# Pull stable release of lib/kiscss into your project
+NOTE: these instructions are applicable in your project
+      directory where kiscss gets added as a subtree.
+
+```shell
+# Once (assuming you want the latest stable version)
+> git remote add -t master --no-tags kiscss git@github.com:million-views/kiscss.git
+
+```shell
+# Start:
+# 1. Add a stable version of kisscss under a folder that suits your
+#    build process or application code organization.
+# 2. Push to remote for others to get the integration
+#
+# NOTE: See integration notes for webpack bundler to incorporate
+#       kiscss into your application. The steps to do so can come
+#       later. Here we are just letting others know that we have
+#       a new css library that we intend to use...
+
+> git subtree add --prefix=praas-app/src/lib/kiscss/ kiscss master --squash
+> git push origin master
+```
+
 
 # References
 - https://stackoverflow.com/questions/25576415/what-is-the-precise-meaning-of-ours-and-theirs-in-git
 - https://tsh.io/blog/git-subtree-or-how-i-stopped-worrying-and-learned-to-love-external-dependencies/
 - http://francis-besset.com/git-subtree-with-tags.html
 - https://blog.logrocket.com/never-guess-about-project-history-again-31f65091f668
+- https://stackoverflow.com/questions/5480258/how-to-delete-a-remote-tag
