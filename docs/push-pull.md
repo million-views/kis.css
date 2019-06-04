@@ -145,6 +145,7 @@ Subtree is already at commit 78e1f8959c7278b06f138418f888eac06ad5fc57.
 
 
 # References
+- https://git-memo.readthedocs.io/en/latest/subtree.html
 - https://stackoverflow.com/questions/25576415/what-is-the-precise-meaning-of-ours-and-theirs-in-git
 - https://stackoverflow.com/questions/34411468/checkout-a-specific-tag-with-git-subtree
 - https://tsh.io/blog/git-subtree-or-how-i-stopped-worrying-and-learned-to-love-external-dependencies/
