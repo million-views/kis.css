@@ -87,11 +87,15 @@ Deleted branch release-to-test (was 37bf510).
 #
 # NOTE: if you already have 'release' branch (from a prior run of
 #       this process) then delete it first before proceeding...
+#
+# NOTE: we use force push here because the split happens on the master
+#       and thus the commit log gets preserved (unlike in the case of
+#       of a test build where the split happens on a branch that is
+#       not maintained)
 
 > git subtree split --prefix=src/lib/kiscss --annotate '(stable) ' -b release
 > git checkout release
-> git pull --rebase --allow-unrelated-histories -X theirs stable master
-> git push stable release:master
+> git push --force stable release:master
 > git tag -a kiscss-0.3.03 -m "Accept fixes from conduits project"
 > git push stable kiscss-0.3.03
 ```
@@ -105,6 +109,8 @@ NOTE: these instructions are applicable in your project
 > git remote add -t master --no-tags kiscss git@github.com:million-views/kiscss.git
 
 ```shell
+# Once
+#
 # Start:
 # 1. Add a stable version of kisscss under a folder that suits your
 #    build process or application code organization.
