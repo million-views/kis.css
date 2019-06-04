@@ -86,14 +86,14 @@ Deleted branch release-to-test (was 37bf510).
 # 4. Also tag the release
 #
 # NOTE: if you already have 'release' branch (from a prior run of
-#       this process, then replace '-b' with '--onto' below)
+#       this process) then delete it first before proceeding...
 
-> git subtree split --prefix=build --annotate '(stable) ' -b release
-> git checkout test-build
+> git subtree split --prefix=src/lib/kiscss --annotate '(stable) ' -b release
+> git checkout release
 > git pull --rebase --allow-unrelated-histories -X theirs stable master
 > git push stable release:master
-> git tag -a kiscss-0.3.02 -m "First reusable cut"
-> git push stable kiscss-0.3.02
+> git tag -a kiscss-0.3.03 -m "Accept fixes from conduits project"
+> git push stable kiscss-0.3.03
 ```
 
 # Pull stable release of lib/kiscss into your project
@@ -114,14 +114,39 @@ NOTE: these instructions are applicable in your project
 #       kiscss into your application. The steps to do so can come
 #       later. Here we are just letting others know that we have
 #       a new css library that we intend to use...
+#
+# NOTE: In the commands that follow we are using praas-app as an example.
+#       Replace this with your own app and the location where you want
+#       kiscss to be.
 
 > git subtree add --prefix=praas-app/src/lib/kiscss/ kiscss master --squash
 > git push origin master
 ```
 
+```shell
+# Optional maintenance:
+# Technically, the user of kiscss should feel free to evolve it based on
+# the application needs. The instructions below assume the app is okay in
+# receiving the latest updates to kiscss and willing to handle any merge
+# conflicts (due to local fixes).
+#
+# 1. Update src/lib/kiscss subtree
+#
+# NOTE: depending on where you are point the ref you may or may not receive
+#       the updates.
+
+# Example 1: There have been no updates to kiscss master below
+> git subtree pull --prefix=praas-app/src/lib/kiscss kiscss master --squash
+From github.com:million-views/kiscss
+ * branch            master     -> FETCH_HEAD
+Subtree is already at commit 78e1f8959c7278b06f138418f888eac06ad5fc57.
+
+```
+
 
 # References
 - https://stackoverflow.com/questions/25576415/what-is-the-precise-meaning-of-ours-and-theirs-in-git
+- https://stackoverflow.com/questions/34411468/checkout-a-specific-tag-with-git-subtree
 - https://tsh.io/blog/git-subtree-or-how-i-stopped-worrying-and-learned-to-love-external-dependencies/
 - http://francis-besset.com/git-subtree-with-tags.html
 - https://blog.logrocket.com/never-guess-about-project-history-again-31f65091f668
