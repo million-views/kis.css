@@ -34,7 +34,7 @@ the job admirably if we stick to some conventions.
 > #--- starting release to test run
 > git checkout -b release-to-test
 > git add --force build/
-> git commit -m "Release 0.3.03"
+> git commit --no-verify -m "Release 0.3.03"
 > git subtree split --prefix=build --annotate '(test-build) ' -b test-build
 
 # Release:
