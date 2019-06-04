@@ -29,7 +29,9 @@ const Header = () => (
     <input id="nav" type="checkbox" className="show" />
     <label htmlFor="nav" className="burger icon-menu" />
     <ul className="menu">
-      <li><a href="kitchen-sink.html" className="icon-docs">Kitchen-Sink-Test</a></li>
+      <li>
+        <a href="kitchen-sink.html" className="icon-docs">Kitchen-Sink-Test</a>
+      </li>
       <li>
         <a
           href="https://github.com/million-views/kis.css"
