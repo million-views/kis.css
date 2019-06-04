@@ -15,11 +15,11 @@ module.exports = (env, argv) => {
   const lib = path.join(root, 'lib');
   const build = path.join(root, '../', 'build');
 
+  // webpack based project configuration
   const options = {
     inlineBelow: 4096 // inline assets whose size is below this many bytes
   };
 
-  // webpack based project configuration
   const wpc = { isProd, argv, mode, root, app, cfg, web, lib, build, options };
 
   // bring in the parts of the build pipeline

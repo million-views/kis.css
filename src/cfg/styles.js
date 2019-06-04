@@ -25,7 +25,7 @@ module.exports = (wpc) => {
   //   in the resulting file name fromr either of these sources
   // - not using a hash allows you to publish to a website without
   //   accumulating past released cruft but also puts the burden
-  //   cache busting on you.
+  //   of cache busting on you.
   // - in our case being able to deploy and revert using git is
   //   important so we chose not to use hash.
   // - the hash may actually work against you when using service
