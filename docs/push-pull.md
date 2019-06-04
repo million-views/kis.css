@@ -81,8 +81,7 @@ Deleted branch release-to-test (was 37bf510).
 # Start:
 # 1. Make sure local master is in sync with remote
 # 2. Create a split tree and branch for 'release' from origin master
-# 3. checkout 'release' and sync with remote choosing local changes
-#    to take precedence
+# 3. Force push to stable
 # 4. Also tag the release
 #
 # NOTE: if you already have 'release' branch (from a prior run of
