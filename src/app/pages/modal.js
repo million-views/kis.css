@@ -16,7 +16,7 @@ export default () => (
           <h3>Great offer</h3>
           <label htmlFor="modal-test" className="close">×</label>
         </header>
-        <section className="content">
+        <section>
           We have a special offer for you. I am sure you will love it!
           However this does look spammy...
         </section>
