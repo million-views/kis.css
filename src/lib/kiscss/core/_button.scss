@@ -66,7 +66,7 @@ button,
   @include label();
   @include button();
 
-  // min-height: 2.4rem;
+  min-height: initial; // 2.4rem;
   height: auto;
   margin: $button-margin;
   padding: $button-padding;

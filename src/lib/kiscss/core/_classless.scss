@@ -70,7 +70,7 @@ h4,
 h5,
 h6,
 p {
-  margin: 0 0 ($separation / 2) 0;
+  margin: 0 0 ($separation / 2) ($separation / 2);
   padding: ($separation / 2) 0 0 0;
 }
 
@@ -256,7 +256,7 @@ textarea {
 input,
 textarea,
 select {
-  // min-height: 2.4rem;
+  min-height: 2.4rem;
   padding: $control-padding;
   border: $border;
   background-color: $control-background;
