@@ -5,9 +5,11 @@ const cssLoader = (cssModule, localIdentName = undefined) => {
     loader: 'css-loader',
     options: {
       sourceMap: true,
-      modules: cssModule,
+      modules: {
+        mode: cssModule,
+        localIdentName
+      },
       importLoaders: 1,
-      localIdentName,
     }
   };
 };
@@ -53,14 +55,17 @@ module.exports = (wpc) => {
     }
   });
 
-  appCss.push(cssLoader(false, '[local]-[hash:base64:5]'));
+  appCss.push(cssLoader('global', '[local]-[hash:base64:5]'));
 
   // NOTE: loaders are chained last-in-first-out (i.e right to left)
   appCss.push({
     loader: 'sass-loader',
     options: {
       sourceMap: true,
-      includePaths: [wpc.app, wpc.lib]
+      sassOptions: {
+        indentWidth: 2,
+        includePaths: [wpc.app, wpc.lib]
+      }
     }
   });
 

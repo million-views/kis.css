@@ -36,14 +36,18 @@ const Header = () => (
         <a
           href="https://github.com/million-views/kis.css"
           target="_blank"
-          rel="noreferrer"
-          className="icon-puzzle">
+          rel="noreferrer noopener"
+          className="icon-puzzle"
+        >
           GitHub
         </a>
       </li>
       <li>
-        <a href="https://github.com/million-views/kis.css/blob/master/README.md"
-          className="icon-help">Documentation</a>
+        <a
+          href="https://github.com/million-views/kis.css/blob/master/README.md"
+          className="icon-help"
+        >Documentation
+        </a>
       </li>
     </ul>
   </nav>
@@ -51,7 +55,7 @@ const Header = () => (
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <Header />
       <main className="intro test">
         <h1>Keep it Simple CSS</h1>
@@ -97,7 +101,7 @@ const App = () => {
         <ToolTipTest />
         <hr />
       </main>
-    </React.Fragment>
+    </>
   );
 };
 

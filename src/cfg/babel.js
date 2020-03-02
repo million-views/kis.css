@@ -1,7 +1,7 @@
 module.exports = (wpc) => {
   const test = /\.jsx?$/;
   const exclude = /(node_modules|bower_components)/;
-  const babel = require('./babel.config')(wpc);
+  const babel = require('./babel.config.js')(wpc);
 
   const loaders = [
     {

@@ -23,22 +23,22 @@ module.exports = (env, argv) => {
   const wpc = { isProd, argv, mode, root, app, cfg, web, lib, build, options };
 
   // bring in the parts of the build pipeline
-  const Base = require('./setup')(wpc);
-  const Lint = require('./eslint')(wpc);
-  const Babel = require('./babel')(wpc);
-  const Assets = require('./assets')(wpc);
-  const Styles = require('./styles')(wpc);
+  const Base = require('./setup.js')(wpc);
+  const Lint = require('./eslint.js')(wpc);
+  const Babel = require('./babel.js')(wpc);
+  const Assets = require('./assets.js')(wpc);
+  const Styles = require('./styles.js')(wpc);
 
   // NOTE: webpack configuration is code as well, so include Lint early on.
   let merged = merge(Base, Lint, Babel, Assets, Styles, { devtool: 'source-map' });
 
   if (isProd) {
     // production
-    const Optimize = require('./optimize')(wpc);
+    const Optimize = require('./optimize.js')(wpc);
     merged = merge(merged, Optimize);
   } else {
     // development
-    const Development = require('./development')({
+    const Development = require('./development.js')({
       ...wpc,
       host: process.env.HOST || 'localhost',
       port: process.env.PORT || 3000,

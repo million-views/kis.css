@@ -14,7 +14,7 @@ const handler = (ref) => {
 };
 
 const ButtonStack = () => (
-  <React.Fragment>
+  <>
     <h3>Buttons stack</h3>
     <p />
     <div className="flex two four-800">
@@ -57,11 +57,11 @@ const ButtonStack = () => (
         <span className="stack pseudo button icon-list">List</span>
       </div>
     </div>
-  </React.Fragment>
+  </>
 );
 
 const ImageStack = () => (
-  <React.Fragment>
+  <>
     <h3>Image stack</h3>
     <p />
     <div className="flex two four-800">
@@ -82,7 +82,7 @@ const ImageStack = () => (
         <a className="stack button">Halong bay</a>
       </div>
     </div>
-  </React.Fragment>
+  </>
 );
 
 const FormStack = () => {
@@ -91,7 +91,7 @@ const FormStack = () => {
   const fileC = React.createRef();
 
   return (
-    <React.Fragment>
+    <>
       <h3 id="stack-test">Form stack</h3>
       <p />
       <form>
@@ -145,7 +145,7 @@ const FormStack = () => {
           </div>
         </div>
       </form>
-    </React.Fragment>
+    </>
   );
 };
 

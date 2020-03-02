@@ -90,7 +90,7 @@ $ npm install --global live-server
 |:--------|:----------------------|:----------------------------------------------|
 | install |```npm install```      | installs dependencies                         |
 | lint    |```npm run lint```     | run eslint on `src` folder                    |
-| lint:fix|```npm run lint fix``` | run eslint on `src` folder                    |
+| lint:fix|```npm run lint:fix``` | run eslint on `src` folder                    |
 | test    |```npm run test```     | simple render test                            |
 | build   |```npm run build```    | compile to `build` folder                     |
 | start   |```npm run start```    | web serve `build` folder                      |

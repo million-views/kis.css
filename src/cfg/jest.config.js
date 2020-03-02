@@ -18,6 +18,7 @@ module.exports = {
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
+    'cjs',
     'json',
     'jsx',
     'ts',
@@ -34,8 +35,9 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   transform: {
     '^.+\\.jsx?$': '<rootDir>/src/cfg/jest.transform.babel.js',
+    // '^(?!.*\\.(js|jsx|ts|tsx)$)': require.resolve('babel-jest'),
     '^.+\\.s?css$': '<rootDir>/src/cfg/jest.transform.css.js',
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '<rootDir>/src/cfg/jest.transform.file.js'
+    '^(?!.*\\.(svg|css|json)$)': '<rootDir>/src/cfg/jest.transform.file.js',
   },
 
   // Indicates whether each individual test should be reported during the run

@@ -76,6 +76,7 @@ Deleted branch release-to-test (was 37bf510).
 ```shell
 # Once
 > git remote add -t master --no-tags stable git@github.com:million-views/kiscss.git
+```
 
 ```shell
 # Start:
@@ -106,6 +107,7 @@ NOTE: these instructions are applicable in your project
 ```shell
 # Once (assuming you want the latest stable version)
 > git remote add -t master --no-tags kiscss git@github.com:million-views/kiscss.git
+```
 
 ```shell
 # Once
@@ -145,7 +147,6 @@ NOTE: these instructions are applicable in your project
 From github.com:million-views/kiscss
  * branch            master     -> FETCH_HEAD
 Subtree is already at commit 78e1f8959c7278b06f138418f888eac06ad5fc57.
-
 ```
 
 

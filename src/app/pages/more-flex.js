@@ -143,7 +143,7 @@ const moreFlex = () => (
     </p>
     <p>
       The cells below should be full width by default and scaled to fit
-    above <code>48em</code>. Resize your browser to see them in action.
+      above <code>48em</code>. Resize your browser to see them in action.
     </p>
     <div className="flex demo">
       <div className="full half-800">
