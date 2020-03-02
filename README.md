@@ -79,7 +79,7 @@ css libraries and references (on how to AND how not to) in creating kis.css:
 If live-server is not installed globally do so now.
 ```
 # is live-server installed ?
-$ which `live-server`
+$ which live-server
 
 # if not installed, install it now
 $ npm install --global live-server
@@ -113,7 +113,7 @@ gives more oportunities for optimization.
 
 ## TODO
 - [ ] Documentation (WIP, in the meantime take a look at the demo app)
-- [ ] Write instructions on how to use git subtree for integration
+- [x] Write instructions on how to use git subtree for integration
 - [ ] Enhance core/* to make webby apps look better out of the box
 - [ ] Semver based release management
 - [ ] Iterate on mobile first css (as bugs get reported)
