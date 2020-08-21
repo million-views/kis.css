@@ -1,19 +1,16 @@
 const presets = (wpc) => [
   ['@babel/preset-env', {
-    loose: true,
     modules: wpc.isTest ? 'commonjs' : false,     /* transpile to ES6 only when using Jest */
     useBuiltIns: 'usage', /* disable polyfills; target the latest and greatest! */
+    bugfixes: true, /* see https://babeljs.io/docs/en/babel-preset-env#bugfixes */
     // debug: true,
     targets: {
-      chrome: 71,
       esmodules: true,
       node: 'current',
     },
     corejs: {
       version: 3, proposals: true
     },
-    // for uglify which we don't want to during development
-    forceAllTransforms: wpc.isProd,
   }],
   ['@babel/preset-react', {
     useBuiltIns: 'usage'
