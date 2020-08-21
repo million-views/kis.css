@@ -43,12 +43,25 @@ const HtmlOptions = {
 // and any references to assets they in turn include that are known
 // to webpack.
 const assets = (wpc) => {
-  return [
-    { context: wpc.web, from: 'favicon.ico' },
-    { context: wpc.web, from: 'assets/branding/*.*', ignore: ['*.scss'] },
-    { context: wpc.web, from: 'assets/images/*.*' },
-    //    { context: wpc.lib, from: 'fonts/*.*', to: 'assets', ignore: ['*.scss'] },
-  ];
+  const globOptions = {
+    ignore: ['*.scss'],
+  };
+
+  const ifDev = !wpc.isProd;
+
+  return {
+    patterns: [
+      { context: wpc.web, from: 'favicon.ico', noErrorOnMissing: ifDev },
+      {
+        context: wpc.web,
+        from: 'assets/branding/*.*',
+        noErrorOnMissing: ifDev,
+        globOptions,
+      },
+      { context: wpc.web, from: 'assets/images/*.*', noErrorOnMissing: ifDev },
+      //    { context: wpc.lib, from: 'fonts/*.*', to: 'assets', ignore: ['*.scss'] },
+    ],
+  };
 };
 
 // see https://webpack.js.org/configuration/ for bail

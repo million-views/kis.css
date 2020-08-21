@@ -62,3 +62,8 @@ typings/
 
 # build
 build
+
+# we want to be on bleeding edge and catch others falling behind
+yarn.lock
+package-lock.json
+
