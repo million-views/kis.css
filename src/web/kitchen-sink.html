@@ -6,14 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Minimal CSS library to let you focus on functionality">
   <title>Keep It Simple CSS - Kitchen Sink Test</title>
-  <!--
-    See https://stackoverflow.com/questions/45321043/preload-css-file-not-supported-on-firefox-and-safari-mac
-  -->
-  <% for (var chunk in htmlWebpackPlugin.files.css) { %>
-  <link href="<%= htmlWebpackPlugin.files.css[chunk] %>" as="style" rel="preload">
-  <link href="<%= htmlWebpackPlugin.files.css[chunk] %>" rel="stylesheet">
-  <% } %>
-
+  <link rel="stylesheet" href="../../dist/kis.css" as="style" rel="preload">
   <!-- stuff that we know a priori to exist in the app -->
   <link rel="preload" href="assets/branding/kiscss.svg.png" as="image">
   <link rel="preload" href="assets/fonts/fontello.woff2" as="font" crossorigin>

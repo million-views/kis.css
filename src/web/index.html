@@ -15,12 +15,7 @@
     Follow https://github.com/Runjuu/html-inline-css-webpack-plugin/issues/10 for
     the fix and the local fix.
   -->
-  <% for (var chunk in htmlWebpackPlugin.files.css) { %>
-  <link href="<%= htmlWebpackPlugin.files.css[chunk] %>" as="style" rel="preload">
-  <link href="<%= htmlWebpackPlugin.files.css[chunk] %>" rel="stylesheet">
-  <% } %>
-
-
+  <link rel="stylesheet" href="../lib/kiscss/ki.scss" as="style" rel="preload">
   <!-- stuff that we know a priori to exist in the app -->
   <link rel="preload" href="assets/branding/kiscss.svg.png" as="image">
   <link rel="preload" href="assets/fonts/fontello.woff2" as="font" crossorigin>
@@ -28,17 +23,9 @@
 
 <body>
   <div id="root">
-    <!--
-      NOTE: webpack-html-plugin will stuff the compile js and css chunks
-      into this file automagically!
-    -->
     Loading...
   </div>
-  <% for (var chunk in htmlWebpackPlugin.files.js) { %>
-  <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[chunk] %>">
-  </script>
-  <% } %>
-
+  <script type="module" src="../app/main.js"></script>
 </body>
 
 </html>

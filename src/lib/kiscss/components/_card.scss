@@ -73,8 +73,8 @@ $card-bottom-padding: 0.6rem !default;
   // special close button used in modal
   .close {
     position: absolute;
-    top: ($separation / 2);
-    right: ($separation / 2);
+    top: calc($separation / 2);
+    right: calc($separation / 2);
     font-size: 1.2em;
     padding: 0 $separation;
     cursor: pointer;

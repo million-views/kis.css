@@ -43,6 +43,7 @@ typings/
 .npm
 .eslintcache
 .parcel-cache
+dist
 
 # Optional REPL history
 .node_repl_history

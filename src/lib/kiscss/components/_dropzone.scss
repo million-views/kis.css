@@ -1,6 +1,6 @@
 // TODO: move to variables/theme
-$dropzone-ratio: 16 / 9 !default; // responsive ratio for images
-$dropzone-height: percentage(1 / $dropzone-ratio) !default; // height w.r.t width
+$dropzone-ratio: calc(16 / 9) !default; // responsive ratio for images
+$dropzone-height: percentage(calc(1 / $dropzone-ratio)) !default; // height w.r.t width
 $dropzone-background-color: #ddd !default;
 
 // This comes from camera.svg. Converted with:
