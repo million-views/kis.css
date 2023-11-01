@@ -20,11 +20,12 @@ import ToolTipTest from './pages/tooltip';
 
 // css module
 import './App.scss';
+const logo = new URL('../web/assets/branding/kiscss.svg.png', import.meta.url);
 
 const Header = () => (
   <nav>
     <a href="index.html" className="brand">
-      <img className="logo" alt="logo" height="2.4rem" src="assets/branding/kiscss.svg.png" />
+      <img className="logo" alt="logo" height="2.4rem" src={logo} />
     </a>
     <input id="nav" type="checkbox" className="show" />
     <label htmlFor="nav" className="burger icon-menu" />

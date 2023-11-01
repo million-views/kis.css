@@ -12,8 +12,8 @@
   "eslintIgnore": [
     "src/app/main.js"
   ],
-
   "css": "dist/kis.css",
+  "browserslist": "firefox >= 118, last 2 Chrome versions, safari >= 17",
   "targets": {
     "test": {
       "source": [
@@ -33,7 +33,7 @@
     "lint:fix": "eslint --fix src",
     "build:test": "parcel build --target test",
     "build:css": "parcel build --target css",
-    "watch": "parcel watch"
+    "dev": "parcel serve"
   },
   "husky": {
     "hooks": {
@@ -55,14 +55,14 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.0",
-    "eslint": "^8.29.0",
-    "eslint-config-standard": "^17.0.0",
+    "@parcel/transformer-sass": "^2.10.1",
+    "eslint": "^8.52.0",
+    "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-jsx": "^11.0.0",
-    "eslint-config-standard-react": "12.0.0",
-    "husky": "^8.0.2",
-    "parcel": "^2.8.0",
-    "stylelint": "14.15.0"
-  },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+    "eslint-config-standard-react": "13.0.0",
+    "husky": "^8.0.3",
+    "parcel": "^2.10.1",
+    "process": "^0.11.10",
+    "stylelint": "15.11.0"
+  }
 }
