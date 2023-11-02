@@ -3,15 +3,25 @@
 @layer theme {
   :root {
     /* Color styles */
-    --primary: hsl(265, 38%, 13%);
+    --darker: rgba(0, 0, 0, 0.5);
+
+    /* --primary: hsl(265, 38%, 13%); */
+
+    --primary: color-mix(in hsl, var(--torquoise), var(--darker));
+
     --secondary: hsl(283, 6%, 45%);
     --tertiary: hsl(257, 15%, 91%);
     --light: hsl(270, 100%, 99%);
     --accent: hsl(278, 100%, 92%);
     --accent--alt: hsl(279, 100%, 97%);
     --accent--ui: hsl(284, 55%, 66%);
-    --transparency: 0.5;
-    --dull: var(--tertiary);
+
+    --success: color-mix(in hsl, var(--cyan), var(--darker));
+    --warning: color-mix(in hsl, var(--orange), var(--darker));
+    --error: color-mix(in hsl, var(--red), var(--darker));
+    --dull: color-mix(in hsl, var(--gray), var(--darker));
+
+    --transparency: 0.3;
 
     /* typography and layout spaces */
     --separation: 0.6rem;
@@ -30,4 +40,44 @@
     /* transitions */
     --transition: all 0.3s;
   }
+
+  /* label custom properties */
+  :root {
+    --label-radius: var(--radius, initial); /* Use a fallback value if --radius is not defined */
+    --label-font: 0.6em;
+    --label-line-height: 1;
+    --label-margin-left: var(--separation, initial); /* Use a fallback value if --separation is not defined */    
+  }
+
+  /* button custom properties */
+  :root {
+    --button-margin: var(--control-margin, initial);
+    --button-padding: var(--control-padding, initial);
+    --button-hover: inset 0 0 0 99rem rgba(255, 255, 255, var(--transparency, 1));
+    --button-click: inset 0 0 0 99rem rgba(0, 0, 0, var(--transparency, 1));
+    --button-pseudo-hover: inset 0 0 0 99rem rgba(0, 0, 0, calc(var(--transparency, 1) / 2));
+    /* --dull: rgba(128, 128, 128, 0.6); */
+  }
+
+  /* select custom properties */
+  :root {
+    --select-margin: var(--separation, initial);
+    --select-padding: calc(var(--separation, initial) * 0.75) var(--separation, initial);
+    /* arrow.svg using http://dopiaza.org/tools/datauri/index.php */
+    --select-dropimage: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjMiPjxwYXRoIGQ9Im0gMCwxIDEsMiAxLC0yIHoiLz48L3N2Zz4=');
+  }
+
+  /* radio custom properties */
+  :root {
+    --radio-size: 1rem;
+    --radio-border: 1px solid #aaa;
+    --radio-background: #555;
+  }
+
+  /* checkbox custom properties */
+  :root {
+    --checkbox-character: '\2714';
+    --checkbox-radius: var(--radius, initial);
+  }
+
 }

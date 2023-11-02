@@ -1,0 +1,66 @@
+/* Button styles based on label and button mixins */
+button,
+.button,
+[type=submit],
+[type=reset],
+[type=button],
+[role=button] {
+  cursor: pointer;
+
+  /* Apply colors using classes */
+  &.success {
+    background: var(--success);
+  }
+  
+  &.warning {
+    background: var(--warning);
+  }
+  
+  &.error {
+    background: var(--error);
+  }
+  
+  &:hover,
+  &:focus {
+    box-shadow: var(--button-hover);
+    border: 0;
+  }
+
+  &.pseudo:hover,
+  &.pseudo:focus {
+    box-shadow: var(--button-pseudo-hover);
+  }
+
+  &.active,
+  &:active,
+  &.pseudo:active {
+    box-shadow: var(--button-click);
+  }
+
+  &[disabled] {
+    cursor: default;
+    box-shadow: none;
+    background: var(--dull); /* todo: add 0.6 transparency in RGBA */
+  }
+
+  min-height: initial;
+  height: auto;
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+}
+
+/* Toggle buttons */
+[type] + .toggle {
+  padding: var(--button-padding);
+  margin-right: 0.3rem;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+}
+
+:checked + .toggle,
+:checked + .toggle:hover {
+  box-shadow: var(--button-click);
+}

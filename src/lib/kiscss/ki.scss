@@ -29,13 +29,13 @@
   between meeting those objectives.
 */
 
-// @import "src/lib/kiscss/core/label";
-// @import "src/lib/kiscss/core/button";
+@import "./core/label.css";
+@import "./core/button.css";
 
 /* forms */
-// @import "src/lib/kiscss/core/select";
-// @import "src/lib/kiscss/core/radio";
-// @import "src/lib/kiscss/core/checkbox";
+@import "./core/select.css";
+@import "./core/radio.css";
+@import "./core/checkbox.css";
 
 /* containers for navigation, container for layout */
 // @import "src/lib/kiscss/containers/container";

@@ -1,0 +1,35 @@
+select {
+  /* the drop-down arrow background and position */
+  background: #fff var(--select-dropimage) no-repeat calc(100% - 15px) center/10px 15px;
+  border: var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--select-padding);
+
+  /* hide browser's dropdown arrow */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &:focus,
+  &:active {
+    border: 1px solid var(--primary);
+    transition: outline 0s;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 var(--black);
+  }
+
+  &[multiple] {
+    background: #fff;
+  }
+
+  option {
+    min-height: 1.5rem;
+    padding: calc(var(--separation, initial) * 1.25) var(--separation, initial);
+  }
+}

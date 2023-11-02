@@ -1,9 +1,5 @@
-// TODO: move to variables/theme
-$radio-size: 1rem !default;
-$radio-border: 1px solid #aaa !default;
-$radio-background: #555 !default; //< round dot insided the circle
-
-@mixin radio() {
+/* Mixin for radio button styles */
+[type="radio"] {
   opacity: 0;
   width: 0;
   position: absolute;
@@ -12,9 +8,9 @@ $radio-background: #555 !default; //< round dot insided the circle
   + .checkable {
     position: relative;
     cursor: pointer;
-    padding-left: $radio-size * 1.5;
-    margin-left: calc($separation / 2);
-    margin-right: ($separation);
+    padding-left: calc(var(--radio-size) * 1.5);
+    margin-left: calc(var(--separation) / 2);
+    margin-right: var(--separation);
 
     &::before,
     &::after {
@@ -24,30 +20,28 @@ $radio-background: #555 !default; //< round dot insided the circle
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      font-size: $radio-size;
-      line-height: $radio-size;
+      font-size: var(--radio-size);
+      line-height: var(--radio-size);
       color: transparent;
-      // /* stylelint-disable */
-      // font-family: sans;
       text-align: center;
       box-sizing: border-box;
-      width: $radio-size;
-      height: $radio-size;
+      width: var(--radio-size);
+      height: var(--radio-size);
       border-radius: 50%;
     }
 
     &::before {
-      border: $radio-border;
+      border: var(--radio-border);
     }
   }
 
   + .checkable:hover::before,
   &:focus + .checkable::before {
-    border: 1px solid $primary;
+    border: 1px solid var(--primary);
   }
 
   &:checked + .checkable::after {
-    background: $radio-background;
+    background: var(--radio-background);
     transform: scale(0.5) translateY(-100%);
   }
 
@@ -55,10 +49,6 @@ $radio-background: #555 !default; //< round dot insided the circle
     background-color: initial;
     cursor: not-allowed;
     pointer-events: none;
-    color: $dull;
+    color: var(--dull);
   }
-}
-
-[type=radio] {
-  @include radio();
 }
