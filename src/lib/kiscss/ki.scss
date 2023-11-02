@@ -1,48 +1,51 @@
-//! kis.css https://github.com/million-views/kis.css
-//! v.0.3.01
+/*! kis.css https://github.com/million-views/kis.css */
+/*! v.0.3.01 */
 
 @charset "utf-8";
 
-// Imports the base variable styles
-@import "src/lib/kiscss/theme";
+@import "./theme.css";
 
-/* modern reset */
-@import "src/lib/kiscss/core/reset";
+@import "./core/reset.css";
 
-// Get the icons from fontello:
-// Typically you add the icons you want and download the icon
-// font file and enumerate the icon codes as you see fit
-@import "src/lib/kiscss/font-icons";
+/*
+  Get the icons from fontello:
+  Typically you add the icons you want and download the icon
+  font file and enumerate the icon codes as you see fit
+*/
+@import "./font-icons.css";
 
-// Make semantic html look good without classes
-// Includes normalize with additional styling
-// to make kisccs look decent without any use of class tags
-@import "src/lib/kiscss/core/classless";
+/* 
+  Make semantic html look good without classes
+  Includes default styling to make kis.css look decent without any use
+  of class tags
+*/
+@import "./core/classless.css";
 
-// And then add more decorations to simple stuff
-// The main idea that we eventually want to get to is to be able
-// to magically make the site have a "webby" or "appy" or "webapp"
-// look and feel... Until then the current style is somewhere in
-// between meeting those objectives.
+/*
+  And then add more decorations to simple stuff
+  The main idea that we eventually want to get to is to be able
+  to magically make the site have a "webby" or "appy" or "webappy"
+  look and feel... Until then the current style is somewhere in
+  between meeting those objectives.
+*/
 
-@import "src/lib/kiscss/core/label";
-@import "src/lib/kiscss/core/button";
+// @import "src/lib/kiscss/core/label";
+// @import "src/lib/kiscss/core/button";
 
-// Forms
-@import "src/lib/kiscss/core/select";
-@import "src/lib/kiscss/core/radio";
-@import "src/lib/kiscss/core/checkbox";
+/* forms */
+// @import "src/lib/kiscss/core/select";
+// @import "src/lib/kiscss/core/radio";
+// @import "src/lib/kiscss/core/checkbox";
 
-// Containers for navigation, flex boxes and generic
-// container for layout
-@import "src/lib/kiscss/containers/container";
-@import "src/lib/kiscss/containers/nav";
-@import "src/lib/kiscss/containers/flex";
+/* containers for navigation, container for layout */
+// @import "src/lib/kiscss/containers/container";
+// @import "src/lib/kiscss/containers/nav";
+// @import "src/lib/kiscss/containers/flex";
 
-// Components
-@import "src/lib/kiscss/components/card";
-@import "src/lib/kiscss/components/stack";
-@import "src/lib/kiscss/components/dropzone";
-@import "src/lib/kiscss/components/tabs";
-@import "src/lib/kiscss/components/modal";
-@import "src/lib/kiscss/components/tooltip";
+/* components */
+// @import "src/lib/kiscss/components/card";
+// @import "src/lib/kiscss/components/stack";
+// @import "src/lib/kiscss/components/dropzone";
+// @import "src/lib/kiscss/components/tabs";
+// @import "src/lib/kiscss/components/modal";
+// @import "src/lib/kiscss/components/tooltip";

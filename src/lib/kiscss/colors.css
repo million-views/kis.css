@@ -1,24 +1,28 @@
-/* cool */
-$aqua: hsl(197, 100%, 75%) !default;
-$cyan: hsl(204, 86%, 53%) !default;
-$blue: hsl(217, 71%, 53%) !default;
-$navy: hsl(210, 100%, 12%) !default;
-$teal: hsl(180, 59%, 51%) !default;
-$torquoise: hsl(171, 100%, 41%) !default;
-$green: hsl(141, 71%, 48%) !default;
-$olive: hsl(153, 43%, 42%) !default;
-$lime: hsl(146, 100%, 50%) !default;
+@layer colors {
+  :root {
+    /* cool */
+    --aqua: hsl(197, 100%, 75%);
+    --cyan: hsl(204, 86%, 53%);
+    --blue: hsl(217, 71%, 53%);
+    --navy: hsl(210, 100%, 12%);
+    --teal: hsl(180, 59%, 51%) 
+    --torquoise: hsl(171, 100%, 41%);
+    --green: hsl(141, 71%, 48%);
+    --olive: hsl(153, 43%, 42%);
+    --lime: hsl(146, 100%, 50%);
 
-/* warm */
-$yellow: hsl(48, 100%, 67%) !default;
-$orange: hsl(28, 100%, 55%) !default;
-$red:hsl(348, 100%, 61%) !default;
-$fuchsia: hsl(314, 88%, 51%) !default;
-$purple: hsl(292, 88%, 42%) !default;
-$maroon: hsl(331, 74%, 30%) !default;
+    /* warm */
+    --yellow: hsl(48, 100%, 67%);
+    --orange: hsl(28, 100%, 55%);
+    --red:hsl(348, 100%, 61%);
+    --fuchsia: hsl(314, 88%, 51%);
+    --purple: hsl(292, 88%, 42%);
+    --maroon: hsl(331, 74%, 30%);
 
-/* gray scale */
-$white:hsl(0, 0%, 100%) !default;
-$silver: hsl(0, 0%, 87%) !default;
-$gray: hsl(0, 0%, 71%) !default;
-$black: hsl(0, 0%, 3%) !default;
+    /* gray scale */
+    --white:hsl(0, 0%, 100%);
+    --silver: hsl(0, 0%, 87%);
+    --gray: hsl(0, 0%, 71%);
+    --black: hsl(0, 0%, 3%);
+  }
+}

@@ -20,7 +20,7 @@
 
 .spin::before {
   animation: spin 2s infinite linear;
-  // animation compensation
+  /* animation compensation */
   margin-left: 0.3rem;
   margin-right: 0.6rem;
   height: auto;

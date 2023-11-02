@@ -1,4 +1,4 @@
-@import "src/lib/kiscss/theme";
+@import "../lib/kiscss/theme.css";
 
 // Display the grid with colors
 .flex.demo > div {
@@ -6,7 +6,7 @@
   > div {
     display: block;
     padding: 0.3rem 0.3rem;
-    background: rgba($green, 0.6);
+    background: rgba(var(--green), 0.6);
     text-align: center;
   }
 }
@@ -14,6 +14,6 @@
 .flex.demo > div:nth-child(2n) {
   > span,
   > div {
-    background: rgba($aqua, 0.6);
+    background: rgba(var(--aqua), 0.6);
   }
 }

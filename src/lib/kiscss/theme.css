@@ -1,18 +1,33 @@
-@import 'colors';
+@import './colors.css';
 
-/* typography and layout spaces */
-$separation: 0.6rem !default;
-$breakpoint: 600px !default;
+@layer theme {
+  :root {
+    /* Color styles */
+    --primary: hsl(265, 38%, 13%);
+    --secondary: hsl(283, 6%, 45%);
+    --tertiary: hsl(257, 15%, 91%);
+    --light: hsl(270, 100%, 99%);
+    --accent: hsl(278, 100%, 92%);
+    --accent--alt: hsl(279, 100%, 97%);
+    --accent--ui: hsl(284, 55%, 66%);
+    --transparency: 0.5;
+    --dull: var(--tertiary);
 
-/* form and flow control spaces */
-$control-margin: 0.3rem !default;
-$control-padding: 0.3rem 0.6rem !default;
-$control-background: #fff !default;
+    /* typography and layout spaces */
+    --separation: 0.6rem;
+    --breakpoint: 600px;
 
-/* shapes */
-$radius: 0.15rem !default;
-$border: 1px solid #ccc !default;
-$shadow: 1px 3px 0.3rem rgba($black, $transparency) !default;
+    /* form and flow control spaces */
+    --control-margin: 0.3rem;
+    --control-padding: 0.3rem 0.6rem;
+    --control-background: #fff;
 
-/* transitions */
-$transition: all 0.3s;
+    /* shapes */
+    --radius: 0.15rem;
+    --border: 1px solid #ccc;
+    --shadow: 1px 3px 0.3rem rgba(var(--black), var(--transparency));
+
+    /* transitions */
+    --transition: all 0.3s;
+  }
+}
