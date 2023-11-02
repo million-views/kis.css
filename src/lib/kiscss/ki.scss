@@ -6,6 +6,9 @@
 // Imports the base variable styles
 @import "src/lib/kiscss/theme";
 
+/* modern reset */
+@import "src/lib/kiscss/core/reset";
+
 // Get the icons from fontello:
 // Typically you add the icons you want and download the icon
 // font file and enumerate the icon codes as you see fit
