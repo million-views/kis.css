@@ -4,7 +4,7 @@ $button-padding: $control-padding !default;
 
 $button-hover: inset 0 0 0 99rem rgba($white, $transparency) !default;
 $button-click: inset 0 0 0 99rem rgba($black, $transparency) !default;
-$button-pseudo-hover: inset 0 0 0 99rem rgba($black, $transparency / 2) !default;
+$button-pseudo-hover: inset 0 0 0 99rem rgba($black, calc($transparency / 2)) !default;
 
 @mixin button() {
   cursor: pointer;

@@ -10,8 +10,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react",
-    "jest"
+    "react"
   ],
   "extends": [
     "standard",
@@ -29,8 +28,7 @@
   "env": {
     "node": true,
     "mocha": true,
-    "browser": true,
-    "jest/globals": true
+    "browser": true
   },
   "rules": {
     "camelcase": 0,

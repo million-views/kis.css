@@ -4,17 +4,20 @@
 @charset "utf-8";
 
 // Imports the base variable styles
-@import "kiscss/theme";
+@import "src/lib/kiscss/theme";
+
+/* modern reset */
+@import "src/lib/kiscss/core/reset";
 
 // Get the icons from fontello:
 // Typically you add the icons you want and download the icon
 // font file and enumerate the icon codes as you see fit
-@import "kiscss/font-icons";
+@import "src/lib/kiscss/font-icons";
 
 // Make semantic html look good without classes
 // Includes normalize with additional styling
 // to make kisccs look decent without any use of class tags
-@import "kiscss/core/classless";
+@import "src/lib/kiscss/core/classless";
 
 // And then add more decorations to simple stuff
 // The main idea that we eventually want to get to is to be able
@@ -22,24 +25,24 @@
 // look and feel... Until then the current style is somewhere in
 // between meeting those objectives.
 
-@import "kiscss/core/label";
-@import "kiscss/core/button";
+@import "src/lib/kiscss/core/label";
+@import "src/lib/kiscss/core/button";
 
 // Forms
-@import "kiscss/core/select";
-@import "kiscss/core/radio";
-@import "kiscss/core/checkbox";
+@import "src/lib/kiscss/core/select";
+@import "src/lib/kiscss/core/radio";
+@import "src/lib/kiscss/core/checkbox";
 
 // Containers for navigation, flex boxes and generic
 // container for layout
-@import "kiscss/containers/container";
-@import "kiscss/containers/nav";
-@import "kiscss/containers/flex";
+@import "src/lib/kiscss/containers/container";
+@import "src/lib/kiscss/containers/nav";
+@import "src/lib/kiscss/containers/flex";
 
 // Components
-@import "kiscss/components/card";
-@import "kiscss/components/stack";
-@import "kiscss/components/dropzone";
-@import "kiscss/components/tabs";
-@import "kiscss/components/modal";
-@import "kiscss/components/tooltip";
+@import "src/lib/kiscss/components/card";
+@import "src/lib/kiscss/components/stack";
+@import "src/lib/kiscss/components/dropzone";
+@import "src/lib/kiscss/components/tabs";
+@import "src/lib/kiscss/components/modal";
+@import "src/lib/kiscss/components/tooltip";

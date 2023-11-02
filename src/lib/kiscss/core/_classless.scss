@@ -70,8 +70,8 @@ h4,
 h5,
 h6,
 p {
-  margin: 0 0 ($separation / 2) ($separation / 2);
-  padding: ($separation / 2) 0 0 0;
+  margin: 0 0 calc($separation / 2) calc($separation / 2);
+  padding: calc($separation / 2) 0 0 0;
 }
 
 // Grouping content
@@ -153,8 +153,8 @@ strong {
 
 // Style blockquote for kiscss
 blockquote {
-  padding: ($separation / 2) ($separation * 2);
-  margin: ($separation / 2);
+  padding: calc($separation / 2) ($separation * 2);
+  margin: calc($separation / 2);
   box-shadow: inset 5px 0 rgba($black, 0.3);
 
   p,
@@ -203,7 +203,7 @@ img {
 
 figure {
   margin: $separation;
-  padding: ($separation / 2);
+  padding: calc($separation / 2);
 
   video,
   img {
@@ -301,7 +301,7 @@ button:-moz-focusring,
 
 // Correct the padding in Firefox.
 fieldset {
-  padding: ($separation / 2) $separation $separation;
+  padding: calc($separation / 2) $separation $separation;
   border: 1 solid transparent;
 }
 
@@ -371,12 +371,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  margin: ($separation / 2);
+  margin: calc($separation / 2);
 }
 
 td,
 th {
-  padding: ($separation / 2);
+  padding: calc($separation / 2);
 }
 
 th {

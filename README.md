@@ -2,13 +2,11 @@ Keep It Simple CSS
 ==================
 
 ## Overview
-Kiscss (pronounced as 'kisses') is yet another CSS library designed to
-be minimal and out of your way when you want to focus on functionality.
+KIS.CSS (pronounced as 'kisses') is a `forward looking` CSS library
+that is minimal and lightweight in terms of functionality and size.
 
 > Keep it simple. Focus on functionality. Visual design and scale
 > come after an idea comes to life, not before.
-
-![Designed with performance and simplicity in mind](src/web/assets/images/kiscss-lighthouse-summary-20190526.png)
 
 ## Why did we create this?
 At our search lab, we spin through testing ideas that have a half-life
@@ -22,50 +20,8 @@ down the road.
 Our goal is to be able to get to a testable product fast without losing
 the ability to improve on the visual aesthetics later. We think using
 large and complex CSS libraries during conception stage is not the right
-choice for building MVPs.
+choice for validating product ideas.
 
-Furthermore, any component that is lacking in kiscss is better created
-using CSS flex and grid, and modern CSS modules approach. We think
-this provides for a more robust roadmap for the MVP.
-
-In summary, we needed a library:
-- that is less than 10KB gzipped
-- that scores 100% in lighthouse in all major metrics
-- that has its code organized to support git subtree based integration
-- that doesn't force css experts to also become experts in the next new fangled
-  javascript framework
-- that integrates well at the source level using bundlers such as webpack
-- that is minimal and fits well with React, Vue, ... ecosystems
-- that lets us stay close to semantic HTML and not spew shit
-  ton of div elements to achieve cool look and feel effects
-- that any one with **good** SCSS/CSS knowledge can comprehend in less
-  than a couple of hours (by looking at the test code).
-
-We created kiscss to fit those needs. We took inspiration from the following
-css libraries and references (on how to AND how not to) in creating kis.css:
-### Libraries
-- normalize.css
-- picnic.css
-- balloon.css
-- HiQ. A high-IQ CSS
-- Bulma
-
->
-> Had we come across Bulma earlier on chances are that this library may not
-> exist. Still, at less than 6KB gzipped with most of what we need, we do
-> intend to love and care for it as we find repeating patterns in prototyping
-> high fidelity functional screens.
->
-> Some day it may grow into bulma or may be not ;-)
->
-
-### References
-- http://oxygencss.com/book/02-oxygen-naming-conventions.html
-- https://inclusive-components.design/
-- https://rocssti.net/en/code-css-source-rocssti
-- https://material.io/design/
-- https://material.io/develop/web/components/typography/
-- https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
 
 ## Features
 - [x] Designed to make semantic html look good without classes (wip)
@@ -97,19 +53,6 @@ $ npm install --global live-server
 | watch   |```npm run watch```    | watch/build changes to `app` and `web` folders|
 
 ## Integrating kiscss in your application
-One of the design goals for kiscss is to support a "make it yours" approach
-to integration. Each MVP we build chooses a released version of kiscss and
-adds a subtree of src/lib/kiscss to its baseline. From then on the intent
-is for this version of kiscss to evolve freely with the prototype, with no
-constraints on either having to push back or pull updates to kiscss.
-
-The MVP can always point to a newer released version of kiscss if it choses
-to. This is akin to adding npm packages by using git urls. This method provides
-more explicit control of the process and integrates well with your bundler and
-gives more oportunities for optimization.
-
-[See details on how to push (for maintainers) and pull (for users)](./docs/push-pull.md)
-
 
 ## TODO
 - [ ] Documentation (WIP, in the meantime take a look at the demo app)

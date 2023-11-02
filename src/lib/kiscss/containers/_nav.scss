@@ -41,7 +41,7 @@ nav {
 
     span,
     div {
-      padding: ($separation * (3/2)) $separation;
+      padding: ($separation * calc(3/2)) $separation;
     }
   }
 
@@ -63,7 +63,7 @@ nav {
     float: right;
     user-select: none;
     // position: relative;
-    padding: ($separation * (3/2)) $separation;
+    padding: ($separation * calc(3/2)) $separation;
     // wierd bug? I am not seeing why the transition
     // fires only when applied on :before but not when
     // it is by itself as in the commented line below:
@@ -125,7 +125,7 @@ nav {
         float: left;
 
         a {
-          padding: ($separation * (3/2)) $separation;
+          padding: ($separation * calc(3/2)) $separation;
         }
       }
     }
