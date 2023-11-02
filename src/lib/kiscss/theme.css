@@ -1,0 +1,18 @@
+@import 'colors';
+
+/* typography and layout spaces */
+$separation: 0.6rem !default;
+$breakpoint: 600px !default;
+
+/* form and flow control spaces */
+$control-margin: 0.3rem !default;
+$control-padding: 0.3rem 0.6rem !default;
+$control-background: #fff !default;
+
+/* shapes */
+$radius: 0.15rem !default;
+$border: 1px solid #ccc !default;
+$shadow: 1px 3px 0.3rem rgba($black, $transparency) !default;
+
+/* transitions */
+$transition: all 0.3s;

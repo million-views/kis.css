@@ -1,0 +1,38 @@
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  /* stylelint-disable */
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 0.3rem 0 0;
+}
+
+.spin::before {
+  animation: spin 2s infinite linear;
+  // animation compensation
+  margin-left: 0.3rem;
+  margin-right: 0.6rem;
+  height: auto;
+  width: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
