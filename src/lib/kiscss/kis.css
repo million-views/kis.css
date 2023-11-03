@@ -38,14 +38,14 @@
 @import "./core/checkbox.css";
 
 /* containers for navigation, container for layout */
-// @import "src/lib/kiscss/containers/container";
-// @import "src/lib/kiscss/containers/nav";
-// @import "src/lib/kiscss/containers/flex";
+@import "./containers/container.css";
+@import "./containers/nav.css";
+@import "./containers/flex.css";
 
 /* components */
-// @import "src/lib/kiscss/components/card";
-// @import "src/lib/kiscss/components/stack";
-// @import "src/lib/kiscss/components/dropzone";
-// @import "src/lib/kiscss/components/tabs";
-// @import "src/lib/kiscss/components/modal";
-// @import "src/lib/kiscss/components/tooltip";
+@import "./components/card.css";
+@import "./components/stack.css";
+@import "./components/dropzone.css";
+/* @import "./components/tabs"; */
+@import "./components/modal.css";
+@import "./components/tooltip.css";

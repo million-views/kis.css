@@ -1,0 +1,127 @@
+/* Navigation bar styles using nesting and custom properties */
+nav {
+  position: var(--nav-position);
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: var(--nav-shadow);
+  width: 100%;
+  z-index: 30;
+
+  .brand {
+    font-weight: 700;
+    float: left;
+    padding: 0 var(--separation);
+    white-space: nowrap;
+    color: inherit;
+
+    :is(img, span, div) {
+      height: 3rem;
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    img {
+      object-fit: scale-down;
+    }
+
+    :is(span, div) {
+      padding: calc(var(--separation) * 3/2) var(--separation);
+    }
+  }
+
+  .logo {
+    height: 3rem;
+    max-width: 6rem;
+    margin-right: 0.3rem;
+  }
+
+  .menu {
+    clear: both;
+    max-height: 0;
+    margin-right: 0.9rem;
+    transition: max-height var(--nav-timing) ease-out;
+  }
+
+  .burger {
+    cursor: pointer;
+    float: right;
+    user-select: none;
+    padding: calc(var(--separation) * 3/2) var(--separation);
+
+    &::before {
+      transition: all var(--nav-timing) ease-out;
+    }
+  }
+
+  :is(ul) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: inherit;
+
+    :is(li a) {
+      display: block;
+      padding: var(--separation) calc(var(--separation) * 2);
+
+      &:hover {
+        background-color: rgba(var(--primary), 0.3);
+      }
+    }
+  }
+
+  .show {
+    display: none;
+
+    &:checked {
+      & ~ .menu {
+        max-height: 36rem;
+      }
+
+      & ~ .burger {
+        &::before {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+}
+
+/* 
+sadly we cannot use custom property for evaluating @custom-media, so
+we have to hard code the '--breakpoint'
+see https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+see https://parceljs.org/languages/css/#custom-media-queries
+*/
+@custom-media --breakAt (min-width: 768px);
+
+@media (--breakAt) {
+  :is(nav, nav ul) {
+    height: 3rem;
+  }
+
+  nav {
+    :is(ul) {
+      :is(li) {
+        float: left;
+
+        :is(a) {
+          padding: calc(var(--separation) * 3/2) var(--separation);
+        }
+      }
+    }
+
+    .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+
+    .burger {
+      display: none;
+    }
+  }
+}

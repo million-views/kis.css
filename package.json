@@ -13,7 +13,7 @@
     "src/app/main.js"
   ],
   "css": "dist/kis.css",
-  "browserslist": "firefox >= 118, last 2 Chrome versions, safari >= 17",
+  "browserslist": "firefox >= 118, last 2 Chrome versions, safari >= 17, not dead",
   "targets": {
     "test": {
       "source": [
@@ -25,7 +25,7 @@
       "source": "src/app/main.js"
     },
     "css": {
-      "source": "src/lib/kiscss/ki.scss"
+      "source": "src/lib/kiscss/kis.css"
     }
   },
   "scripts": {
@@ -55,6 +55,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@parcel/transformer-css": "2.10.2",
     "@parcel/transformer-sass": "^2.10.1",
     "eslint": "^8.52.0",
     "eslint-config-standard": "^17.1.0",
@@ -68,7 +69,8 @@
 
   "@parcel/transformer-css": {
     "drafts": {
-      "nesting": true
+      "nesting": true,
+      "customMedia": true
     }
   }
 }

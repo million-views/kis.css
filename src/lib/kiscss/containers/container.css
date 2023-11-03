@@ -1,0 +1,8 @@
+/* container: provides spacing all around */
+.container {
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+
+  /* Include padding using custom property */
+  padding: var(--container-padding);
+}

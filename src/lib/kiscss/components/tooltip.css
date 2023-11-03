@@ -1,0 +1,97 @@
+/* Tooltip baseline styles */
+[data-tooltip] {
+  position: relative;
+  z-index: 10;
+  /* Tooltips are hidden initially */
+  opacity: 0;
+  border-width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Transition */
+  transition: opacity 0.6s ease, height 0s ease 0.6s;
+  /* Label-like element */
+  &::after {
+    /* Style */
+    margin-left: 0;
+    font-size: var(--tooltip-font-size);
+    background: var(--orange);
+    /* Content */
+    content: attr(data-tooltip);
+    /* Behavior */
+    white-space: nowrap;
+  }
+  /* Directional small arrow */
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 0;
+    border-style: solid;
+  }
+}
+
+/* Data-tooltip-bottom */
+[data-tooltip][data-tooltip-bottom]::after,
+[data-tooltip][data-tooltip-bottom]::before {
+  top: calc(100% - 6px);
+  bottom: auto;
+  left: 0;
+  margin-top: 12px;
+}
+
+[data-tooltip][data-tooltip-bottom]::before {
+  border-color: transparent transparent var(--orange);
+  margin-top: 0;
+  left: 10px;
+}
+
+/* Data-tooltip-top */
+[data-tooltip][data-tooltip-top]::after,
+[data-tooltip][data-tooltip-top]::before {
+  top: auto;
+  bottom: calc(100% - 6px);
+  left: 0;
+  margin-bottom: 12px;
+}
+
+[data-tooltip][data-tooltip-top]::before {
+  border-color: var(--orange) transparent transparent;
+  margin-bottom: 0;
+  left: 10px;
+}
+
+/* Data-tooltip-right */
+[data-tooltip][data-tooltip-right]::after,
+[data-tooltip][data-tooltip-right]::before {
+  left: 100%;
+  margin-left: 6px;
+  margin-top: 0;
+  top: 0;
+  bottom: auto;
+}
+
+[data-tooltip][data-tooltip-right]::before {
+  border-color: transparent var(--orange) transparent transparent;
+  margin-left: -6px;
+  left: 100%;
+  top: 7px;
+}
+
+/* Data-tooltip-left */
+[data-tooltip][data-tooltip-left]::after,
+[data-tooltip][data-tooltip-left]::before {
+  right: 100%;
+  margin-right: 6px;
+  left: auto;
+  bottom: auto;
+  margin-top: 0;
+  top: 0;
+}
+
+[data-tooltip][data-tooltip-left]::before {
+  border-color: transparent transparent transparent var(--orange);
+  margin-right: -6px;
+  right: 100%;
+  top: 7px;
+}

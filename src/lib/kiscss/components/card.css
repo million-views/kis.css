@@ -1,0 +1,84 @@
+/* minimal container for a card layout */
+.card {
+  position: relative;
+  /* box-shadow: var(--card-shadow); */
+  border-radius: var(--card-radius);
+  border: var(--card-border);
+  overflow: hidden;
+  text-align: left;
+  background: var(--card-background, var(--white));
+  margin-bottom: var(--card-margin, var(--separation));
+  padding: 0;
+
+  /* prevent overflows in descendants */
+  > * {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* top of the card */
+  header,
+  section,
+  > p {
+    padding: var(--card-top-padding);
+    font-size: 90%;
+  }
+
+  header {
+    font-weight: bold;
+    position: relative;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0;
+      margin: 0 var(--card-margin-right, calc(var(--separation) * 3)) 0 0;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+
+    /* See:
+     * - https://uxplanet.org/why-letter-casing-is-important-to-consider-during-design-decisions-50402acd0a4e
+     * - https://uxdesign.cc/the-microcopyist-cancellation-confirmation-conflagration-8a6047a4cf9
+     */
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-transform: uppercase;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  /* bottom of the card */
+  footer {
+    padding: var(--card-bottom-padding);
+  }
+
+  /* special close button used in modal */
+  .close {
+    position: absolute;
+    top: calc(var(--separation) / 2);
+    right: calc(var(--separation) / 2);
+    font-size: 1.2em;
+    padding: 0 var(--separation);
+    cursor: pointer;
+    width: auto;
+
+    &:hover {
+      color: var(--error);
+    }
+  }
+
+  .dangerous {
+    background: var(--error);
+    float: right;
+  }
+}

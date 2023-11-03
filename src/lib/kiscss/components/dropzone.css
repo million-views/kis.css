@@ -1,0 +1,34 @@
+/* typical use is at a top-level element with styling provided by the app */
+.dropzone {
+  /* @include button(); */
+
+  position: relative;
+  display: block;
+  padding: 0;
+  /* Hack from http://stackoverflow.com/a/13976732/938236 */
+  padding-bottom: var(--dropzone-height);
+  overflow: hidden;
+  border: 0;
+  /* uncomment these if you need to style dropzone's */
+  /* border-radius: var(--dropzone-radius); */
+  /* margin: var(--dropzone-margin); */
+
+  background-color: var(--dropzone-background-color);
+  background-size: cover;
+  background-position: center center;
+  /* see https://www.stefanjudis.com/today-i-learned/custom-properties-dont-work-with-the-url-css-function/ */
+  background-image: src(var(--dropzone-background-image));
+
+  /* sub-elements */
+  input {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+}

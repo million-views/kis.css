@@ -1,4 +1,4 @@
-// stack elements one on top of another
+/* stack elements one on top of another */
 .stack,
 .stack .toggle {
   margin-left: 0;
@@ -10,21 +10,21 @@
   border-radius: 0;
 }
 
-// first child...
+/* first child... */
 .stack:first-child,
 .stack:first-child .toggle {
-  border-top-left-radius: $radius;
-  border-top-right-radius: $radius;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
-// ... and last child get rounded borders to get a packed/stacked look
+/* ... and last child get rounded borders to get a packed/stacked look */
 .stack:last-child,
 .stack:last-child .toggle {
-  border-bottom-left-radius: $radius;
-  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
 }
 
-// to avoid the double border of input and textarea
+/* to avoid the double border of input and textarea */
 input,
 textarea,
 select {
@@ -39,7 +39,7 @@ select {
     &:focus + input,
     &:focus + textarea,
     &:focus + select {
-      border-top-color: $primary;
+      border-top-color: var(--primary);
     }
   }
 }

@@ -1,15 +1,19 @@
+/* 
 // Place site wide CSS (global) here and setup webpack
 // or parceljs to process it as such. CSS modules should
 // be used only on stylesheets found under components.
-//
+// 
+*/
 .intro {
   padding: 10px;
   max-width: 900px;
-  margin: 4rem auto; // <- chack nav height (default is 3rem)
+  margin: 4rem auto; /* <- check nav height (default is 3rem) */
 }
 
+/* 
 // icon-font: place this declaration in your main css file; make sure your
-// bundler is able to resolve the icon font file.
+// bundler is able to resolve the icon font file. 
+*/
 @font-face {
   font-family: 'fontello';
   src: url('~web/assets/fonts/fontello.eot?66688527');
@@ -23,9 +27,11 @@
   font-style: normal;
 }
 
+/* 
 // Go to fontello.com or similar sites and add the icons you want.
 // Place the icon font file in a public folder. Next enumerate
-// the and pre-define the icons that exist in your fontello here.
+// the and pre-define the icons that exist in your fontello here. 
+*/
 .icon-puzzle::before { content: '\e800'; }
 .icon-login::before { content: '\e801'; }
 .icon-logout::before { content: '\e802'; }
@@ -59,6 +65,7 @@
 .icon-spin-2::before { content: '\e81e'; }
 .icon-spin-3::before { content: '\e81f'; }
 
+/* 
 // license info
 //
 // ## Font Awesome
@@ -83,4 +90,5 @@
 //    Copyright (C) 2012 by P.J. Onori
 //    Author:    P.J. Onori
 //    License:   SIL (http://scripts.sil.org/OFL)
-//    Homepage:  http://somerandomdude.com/work/iconic/
+//    Homepage:  http://somerandomdude.com/work/iconic/ 
+*/

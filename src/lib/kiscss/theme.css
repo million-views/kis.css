@@ -1,5 +1,6 @@
 @import './colors.css';
 
+
 @layer theme {
   :root {
     /* Color styles */
@@ -80,4 +81,48 @@
     --checkbox-radius: var(--radius, initial);
   }
 
+  /* container custom properties */
+  :root {
+    --container-max-width: 1200px;
+    --container-padding: calc(5px + 1vmin);
+  }
+
+  /* nav custom properties */
+  :root {
+    --nav-shadow: var(--shadow, 1px 1px 4px 0 red);
+    --nav-position: fixed;
+    --nav-item-margin: 0.3rem var(--separation, initial);
+    --nav-timing: 0.3s;
+  }
+
+  /* TODO: flex custom properies */
+
+  /* card custom properties */
+  :root {
+    /* --card-shadow: var(--shadow); */
+    --card-border: var(--border);
+    --card-radius: var(--radius);
+    /* --card-margin: var(--margin, 0 0.3rem 0 0.3rem); */
+    --card-top-padding: var(--top-padding, 0.6rem 0.6rem);
+    --card-bottom-padding: var(--bottom-padding, 0.6rem);
+  }
+
+  /* TODO: stack custom properties */
+
+  /* TODO: dropzone custom properties */
+  :root {
+    --dropzone-ratio: calc(16 / 9);
+    --dropzone-height: percentage(calc(1 / var(--dropzone-ratio)));
+    --dropzone-background-color: #ddd;
+    --dropzone-background-image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNjQwIiB2ZXJzaW9uPSIxLjEiPjxnIHN0eWxlPSJmaWxsOiMzMzMiPjxwYXRoIGQ9Ik0gMTg3IDIzMCBDIDE3NSAyMzAgMTY5IDI0MCAxNjUgMjUyIEwgMTY1IDMwMCBMIDE2NSA0MDggQyAxNjUgNDIwIDE3NSA0MzAgMTg3IDQzMCBMIDQ2MyA0MzAgQyA0NzUgNDMwIDQ4NSA0MjAgNDg1IDQwOCBMIDQ4NSAzMDAgTCA0ODUgMjUyIEMgNDg1IDI0MCA0NzUgMjMwIDQ2MyAyMzAgTCAxODcgMjMwIHogTSAzNjAgMjU2IEEgNzAgNzIgMCAwIDEgNDMwIDMyOCBBIDcwIDcyIDAgMCAxIDM2MCA0MDAgQSA3MCA3MiAwIDAgMSAyOTAgMzI4IEEgNzAgNzIgMCAwIDEgMzYwIDI1NiB6Ii8+PGNpcmNsZSBjeD0iMzYwIiBjeT0iMzMwIiByPSI0MSIvPjxwYXRoIGQ9Im0yMDUgMjI1IDUtMTAgMjAgMCA1IDEwLTMwIDAiLz48cGF0aCBkPSJNMjg1IDIwMEwyNzAgMjI1IDM3NiAyMjUgMzYxIDIwMCAyODUgMjAwek0zMTAgMjA1TDMzNyAyMDUgMzM3IDIxOCAzMTAgMjE4IDMxMCAyMDV6Ii8+PHBhdGggZD0ibTQwNSAyMjUgNS0xMCAyMCAwIDUgMTAtMzAgMCIvPjwvZz48L3N2Zz4=';
+    --dropzone-radius: var(--label-radius);
+    --dropzone-margin: var(--button-margin);
+  }
+
+  /* todo: modal custom properties */
+
+  /* tooltip custom properties */
+  :root {
+    --tooltip-font-size: 0.8em;
+  }
 }

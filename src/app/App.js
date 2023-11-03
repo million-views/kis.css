@@ -6,6 +6,8 @@ import CardTest from './pages/card';
 import CheckboxTest from './pages/checkbox';
 import DropZoneTest from './pages/dropzone';
 import FlexTest from './pages/flex';
+import FlexGridTest from './pages/flex-grid';
+
 import MoreFlexTest from './pages/more-flex';
 import InputTest from './pages/input';
 import LabelTest from './pages/label';
@@ -19,7 +21,7 @@ import TabsTest from './pages/tabs';
 import ToolTipTest from './pages/tooltip';
 
 // css module
-import './App.scss';
+import './App.css';
 const logo = new URL('../web/assets/branding/kiscss.svg.png', import.meta.url);
 
 const Header = () => (
@@ -77,7 +79,9 @@ const App = () => {
         <hr />
         <DropZoneTest />
         <hr />
-        <FlexTest />
+        <FlexGridTest />
+        <hr />
+        <FlexTest />      
         <hr />
         <MoreFlexTest />
         <hr />

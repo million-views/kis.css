@@ -1,0 +1,61 @@
+/* 
+See https://css-tricks.com/tabs-its-complicated/ 
+
+notes:
+- Don't use tab interface in mobile if you can avoid it
+- Since parent can have auto-size, we set align-self to flex-start
+  explicitly
+- In .tab order makes it possible to make the tab always
+  appear below the label
+*/
+
+
+/* .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  & > .tab {
+    width: 100%;
+    display: none;
+    order: 99;
+  }
+
+  & > input {
+    display: none;
+
+    &:checked + label {
+      & + .tab {
+        display: block;
+
+        & img {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+} */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  & > .tab {
+    display: none;
+    width: 100%;
+    order: 99;
+  }
+
+  & > input {
+    display: none;
+    &:checked + label {
+      & + .tab {
+        display: block;
+        & img {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

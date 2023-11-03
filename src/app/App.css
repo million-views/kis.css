@@ -1,6 +1,6 @@
 @import "../lib/kiscss/theme.css";
 
-// Display the grid with colors
+/* // Display the grid with colors */
 .flex.demo > div {
   > span,
   > div {
