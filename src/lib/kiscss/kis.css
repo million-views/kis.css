@@ -46,6 +46,6 @@
 @import "./components/card.css";
 @import "./components/stack.css";
 @import "./components/dropzone.css";
-/* @import "./components/tabs"; */
+@import "./components/tabs";
 @import "./components/modal.css";
 @import "./components/tooltip.css";

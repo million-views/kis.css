@@ -1,4 +1,5 @@
 import React from 'react';
+import logoUrl from 'url:../../web/assets/branding/kiscss.svg.png';
 
 export default () => (
   <div className="container">
@@ -7,7 +8,7 @@ export default () => (
 
     <nav style={{ position: 'relative', zIndex: 9 }}>
       <a href="#" className="brand">
-        <img className="logo" alt="logo" src="assets/branding/kiscss.svg.png" />
+        <img className="logo" alt="logo" src={logoUrl} />
       </a>
       {/* <!-- responsive--> */}
       <input id="demo-nav" type="checkbox" className="show" />

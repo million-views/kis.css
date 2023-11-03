@@ -1,4 +1,8 @@
 import React from 'react';
+import forestUrl from 'url:../../web/assets/images/forest.jpg';
+import lakeUrl from 'url:../../web/assets/images/lake.jpg';
+import balloonUrl from 'url:../../web/assets/images/balloon.jpg';
+import halongUrl from 'url:../../web/assets/images/halong.jpg';
 
 // TODO: move to tiny?
 const handler = (ref) => {
@@ -66,19 +70,19 @@ const ImageStack = () => (
     <p />
     <div className="flex two four-800">
       <div>
-        <img className="stack" alt="forest" src="assets/images/forest.jpg" />
+        <img className="stack" alt="forest" src={forestUrl} />
         <a className="stack button">Forest</a>
       </div>
       <div>
-        <img className="stack" alt="balloon" src="assets/images/balloon.jpg" />
+        <img className="stack" alt="balloon" src={balloonUrl} />
         <a className="stack button">Balloon</a>
       </div>
       <div>
-        <img className="stack" alt="lake" src="assets/images/lake.jpg" />
+        <img className="stack" alt="lake" src={lakeUrl} />
         <a className="stack button">Lake</a>
       </div>
       <div>
-        <img className="stack" alt="halong" src="assets/images/halong.jpg" />
+        <img className="stack" alt="halong" src={halongUrl} />
         <a className="stack button">Halong bay</a>
       </div>
     </div>

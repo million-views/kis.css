@@ -1,9 +1,10 @@
 import React from 'react';
+import forestUrl from 'url:../../web/assets/images/forest.jpg';
 
 const One = () => (
   <div className="full half-600 third-800">
     <article className="card">
-      <img alt="forest" src="assets/images/forest.jpg" />
+      <img alt="forest" src={forestUrl} />
       <section>This is a nice forest. What do you want to do with it?</section>
       <footer>
         <button>Enjoy</button>

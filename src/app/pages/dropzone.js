@@ -1,5 +1,5 @@
 import React from 'react';
-const backgroundImage = 'assets/images/forest.jpg';
+import forestUrl from 'url:../../web/assets/images/forest.jpg';
 
 /**
  * See:
@@ -44,7 +44,7 @@ const One = () => {
 
   return (
     <div>
-      <label ref={file} className="dropzone" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <label ref={file} className="dropzone" style={{ backgroundImage: `url(${forestUrl})` }}>
         <input onChange={changeImage} name="filea" title="Drop image or click me" type="file" />
       </label>
     </div>

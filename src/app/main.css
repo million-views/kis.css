@@ -16,13 +16,13 @@
 */
 @font-face {
   font-family: 'fontello';
-  src: url('~web/assets/fonts/fontello.eot?66688527');
+  /* src: url('../web/assets/fonts/fontello.eot?66688527'); */
   src:
-    url('~web/assets/fonts/fontello.eot?66688527#iefix') format('embedded-opentype'),
-    url('~web/assets/fonts/fontello.woff2?66688527') format('woff2'),
-    url('~web/assets/fonts/fontello.woff?66688527') format('woff'),
-    url('~web/assets/fonts/fontello.ttf?66688527') format('truetype'),
-    url('~web/assets/fonts/fontello.svg?66688527#plugin') format('svg');
+    /* url('../web/assets/fonts/fontello.eot?66688527#iefix') format('embedded-opentype'), */
+    url('../web/assets/fonts/fontello.woff2?66688527') format('woff2');
+    /* url('../web/assets/fonts/fontello.woff?66688527') format('woff'), */
+    /* url('../web/assets/fonts/fontello.ttf?66688527') format('truetype'), */
+    /* url('../web/assets/fonts/fontello.svg?66688527#plugin') format('svg'); */
   font-weight: normal;
   font-style: normal;
 }

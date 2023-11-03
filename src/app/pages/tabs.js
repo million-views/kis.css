@@ -1,4 +1,10 @@
 import React from 'react';
+import forestUrl from 'url:../../web/assets/images/forest.jpg';
+import lakeUrl from 'url:../../web/assets/images/lake.jpg';
+import balloonUrl from 'url:../../web/assets/images/balloon.jpg';
+
+
+
 const One = () => (
   <div className="tabs">
     <input id="tab-1" type="radio" name="tabgroupB" defaultChecked />
@@ -6,7 +12,7 @@ const One = () => (
       Forest
     </label>
     <div className="tab">
-      <img alt="forrest" src="assets/images/forest.jpg" />
+      <img alt="forrest" src={forestUrl} />
     </div>
 
     <input id="tab-2" type="radio" name="tabgroupB" />
@@ -14,7 +20,7 @@ const One = () => (
       Lake
     </label>
     <div className="tab">
-      <img alt="lake" src="assets/images/lake.jpg" />
+      <img alt="lake" src={lakeUrl} />
     </div>
 
     <input id="tab-3" type="radio" name="tabgroupB" />
@@ -22,7 +28,7 @@ const One = () => (
       Balloon
     </label>
     <div className="tab">
-      <img alt="balloon" src="assets/images/balloon.jpg" />
+      <img alt="balloon" src={balloonUrl} />
     </div>
   </div>
 );

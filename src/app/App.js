@@ -19,15 +19,16 @@ import StackTest from './pages/stack';
 import TableTest from './pages/table';
 import TabsTest from './pages/tabs';
 import ToolTipTest from './pages/tooltip';
+import logoUrl from 'url:../web/assets/branding/kiscss.svg.png';
 
 // css module
 import './App.css';
-const logo = new URL('../web/assets/branding/kiscss.svg.png', import.meta.url);
+// const logo = new URL('../web/assets/branding/kiscss.svg.png', import.meta.url);
 
 const Header = () => (
   <nav>
     <a href="index.html" className="brand">
-      <img className="logo" alt="logo" height="2.4rem" src={logo} />
+      <img className="logo" alt="logo" height="2.4rem" src={logoUrl} />
     </a>
     <input id="nav" type="checkbox" className="show" />
     <label htmlFor="nav" className="burger icon-menu" />

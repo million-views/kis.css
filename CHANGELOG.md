@@ -7,6 +7,17 @@ TLA used in this document:
 - TD      => Technical Debt
 - FIX     => A bug fix 
 - CHORE   => Grunt work, maintenance or just a chore [duh!]
+## [0.5.01] - 03NOV2023
+- TD: Webpack, good bye!
+  - move to parcel; might end up using lightning.dev to compile and
+    package kis.css eventually
+  - parcel has its own quirks... sources that helped address
+    them are provided below for reference:
+    - [serving static files](https://liman.io/blog/static-files-development-parceljs)
+      - decided to use the 'url' import pattern as a temp fix
+    - when dev server starts acting wierd, delete .parcel-cache and/or restart
+    - TODO: add more here
+  - wip-todo: document changes to kis.css...
 
 ## [0.4.01] - 03MAR2020
 - TD: Versionitis strikes again. Keep up with the version bumps in JS packages

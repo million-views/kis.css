@@ -1,7 +1,6 @@
 /* typical use is at a top-level element with styling provided by the app */
 .dropzone {
   /* @include button(); */
-
   position: relative;
   display: block;
   padding: 0;
