@@ -9,33 +9,6 @@ notes:
   appear below the label
 */
 
-
-/* .tabs {
-  display: flex;
-  flex-wrap: wrap;
-  align-self: flex-start;
-  & > .tab {
-    width: 100%;
-    display: none;
-    order: 99;
-  }
-
-  & > input {
-    display: none;
-
-    &:checked + label {
-      & + .tab {
-        display: block;
-
-        & img {
-          margin: 0;
-          width: 100%;
-        }
-      }
-    }
-  }
-} */
-
 .tabs {
   display: flex;
   flex-wrap: wrap;

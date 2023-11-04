@@ -9,43 +9,43 @@ nav {
   width: 100%;
   z-index: 30;
 
-  .brand {
+  & .brand {
     font-weight: 700;
     float: left;
     padding: 0 var(--separation);
     white-space: nowrap;
     color: inherit;
 
-    :is(img, span, div) {
+    & :is(img, span, div) {
       height: 3rem;
       display: inline-block;
       text-align: left;
       vertical-align: middle;
     }
 
-    img {
+    & img {
       object-fit: scale-down;
     }
 
-    :is(span, div) {
+    & :is(span, div) {
       padding: calc(var(--separation) * 3/2) var(--separation);
     }
   }
 
-  .logo {
+  & .logo {
     height: 3rem;
     max-width: 6rem;
     margin-right: 0.3rem;
   }
 
-  .menu {
+  & .menu {
     clear: both;
     max-height: 0;
     margin-right: 0.9rem;
     transition: max-height var(--nav-timing) ease-out;
   }
 
-  .burger {
+  & .burger {
     cursor: pointer;
     float: right;
     user-select: none;
@@ -56,14 +56,14 @@ nav {
     }
   }
 
-  :is(ul) {
+  & ul {
     margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
     background-color: inherit;
 
-    :is(li a) {
+    & :is(li a) {
       display: block;
       padding: var(--separation) calc(var(--separation) * 2);
 
@@ -73,7 +73,7 @@ nav {
     }
   }
 
-  .show {
+  & .show {
     display: none;
 
     &:checked {
