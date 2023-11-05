@@ -4,8 +4,11 @@
  - MIT License
 */
 label.dropzone {
+  /* align-self: flex-start; */
+
   cursor: pointer;
-  height: 200px;
+  width: 100%;
+  /* height: 200px; */
   aspect-ratio: var(--dropzone-aspect-ratio);
   padding: 20px;
   position: relative;
@@ -18,11 +21,6 @@ label.dropzone {
   border: var(--dropzone-border);
   border-radius: var(--dropzone-radius);
   margin: var(--dropzone-margin);
-
-  background-color: var(--dropzone-background-color);
-  background-size: cover;
-  background-position: center center;
-  /* background-image: var(--dropzone-background-image); */
   transition: background .2s ease-in-out, border .2s ease-in-out;
 
   &:hover {
@@ -34,7 +32,14 @@ label.dropzone {
   }
 
   /* sub-elements */
-  & span {
+  &:not([data-show-selector]) {
+    background-color: var(--dropzone-background-color);
+    background-size: cover;
+    background-position: center center;
+    background-image: var(--dropzone-background-image);
+  }
+
+  &[data-show-selector] span:first-child {
     color: #444;
     font-size: 20px;
     font-weight: bold;
@@ -42,8 +47,36 @@ label.dropzone {
     transition: color .2s ease-in-out;
   }
 
-  & input[type=file] {
-/* 
+  &:not([data-show-selector]) span {
+    display: none;
+  }
+
+  &[data-show-selector] input[type=file] {
+    max-width: 100%;
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid #555;
+
+    &::file-selector-button {
+      margin-inline-start: auto;
+      border: none;
+      background: #084cdf;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+  
+      &:hover {
+        background: #0d45a5;
+      }
+    } 
+  }
+
+  &:not([data-show-selector]) input[type=file] {
+    /* display: none; */
     left: 0;
     width: 100%;
     height: 100%;
@@ -51,29 +84,6 @@ label.dropzone {
     margin: 0;
     padding: 0;
     opacity: 0;
-    cursor: pointer;
     position: absolute; 
-*/
-    max-width: 100%;
-    color: #444;
-    padding: 5px;
-    background: #fff;
-    border-radius: var(--radius);
-    border: 1px solid #555;
-  }
-
-  & input[type=file]::file-selector-button {
-    margin-inline-start: auto;
-    border: none;
-    background: #084cdf;
-    padding: 10px 20px;
-    border-radius: var(--radius);
-    color: #fff;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
-
-    &:hover {
-      background: #0d45a5;
-    }
   }
 }

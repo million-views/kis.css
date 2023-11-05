@@ -69,9 +69,9 @@ const Three = () => {
 
   return (
     <div>
-      <label ref={file} className="dropzone">
+      <label data-show-selector ref={file} className="dropzone">
         <span>Drop files here</span>
-        or
+        <span>or</span>
         <input onChange={changeImage} name="filec" title="Drop image or click me" type="file" />
       </label>
     </div>
