@@ -32,6 +32,7 @@ const handler = (ref) => {
     const reader = new FileReader();
     reader.onloadend = () => {
       // console.log(ref.current.style);
+      ref.current.removeAttribute('data-show-selector');
       ref.current.style.backgroundImage = `url(${reader.result})`;
     };
     reader.readAsDataURL(e.target.files[0]);
