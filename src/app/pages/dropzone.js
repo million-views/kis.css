@@ -39,6 +39,16 @@ const handler = (ref) => {
   };
 };
 
+const showThumnail = (ref) => {
+  return (e) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      ref.current.style.backgroundImage = `url(${reader.result})`;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  };
+}
+
 const One = () => {
   const file = React.createRef();
   const changeImage = handler(file);
@@ -65,15 +75,20 @@ const Two = () => {
 };
 
 const Three = () => {
-  const file = React.createRef();
-  const changeImage = handler(file);
+  const thumbnail = React.createRef();
+  const changeImage = showThumnail(thumbnail);
 
   return (
     <div>
-      <label data-show-selector ref={file} className="dropzone">
+      <label data-show-selector className="dropzone">
         <span>Drop files here</span>
         <span>or</span>
         <input onChange={changeImage} name="filec" title="Drop image or click me" type="file" />
+        <div
+          style={{ backgroundImage: ""}}
+          ref={thumbnail}
+          className="file-upload-thumb">
+      </div>
       </label>
     </div>
   );
