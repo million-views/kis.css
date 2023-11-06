@@ -1,4 +1,3 @@
-/* Mixin for radio button styles */
 [type="radio"] {
   opacity: 0;
   width: 0;
@@ -9,8 +8,6 @@
     position: relative;
     cursor: pointer;
     padding-left: calc(var(--radio-size) * 1.5);
-    margin-left: calc(var(--separation) / 2);
-    margin-right: var(--separation);
 
     &::before,
     &::after {
@@ -24,7 +21,6 @@
       line-height: var(--radio-size);
       color: transparent;
       text-align: center;
-      box-sizing: border-box;
       width: var(--radio-size);
       height: var(--radio-size);
       border-radius: 50%;
@@ -41,7 +37,9 @@
   }
 
   &:checked + .checkable::after {
-    background: var(--radio-background);
+    accent-color: var(--accent--ui);
+    background-color: var(--accent--ui);
+    /* shrink the fill and move up to compensate */
     transform: scale(0.5) translateY(-100%);
   }
 

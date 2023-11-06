@@ -77,8 +77,11 @@
 
   /* checkbox custom properties */
   :root {
-    --checkbox-character: '\2714';
+    --checkbox-size: 1rem;
+    --checkbox-border: 1px solid #aaa;
+    --checkbox-background: #555;
     --checkbox-radius: var(--radius, initial);
+    --checkbox-character: '\2714';
   }
 
   /* container custom properties */

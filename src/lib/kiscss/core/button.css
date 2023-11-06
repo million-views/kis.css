@@ -1,3 +1,12 @@
+.label {
+    
+  /* Apply font and spacing variables */
+  font-size: var(--label-font);
+  padding: calc(var(--separation, initial) / 2);
+  line-height: var(--label-line-height);
+  margin-left: var(--label-margin-left);
+}
+
 /* Button styles based on label and button mixins */
 button,
 .button,
@@ -7,7 +16,29 @@ button,
 [role=button] {
   cursor: pointer;
   display: inline-block;
+  text-align: center;
+  letter-spacing: inherit;
+  vertical-align: middle;
+
+  border: 0;
+  border-radius: var(--label-radius);
+
+  width: auto;
+  min-height: initial;
+  height: auto;
+
+  /* see https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-touch-callout */
+  -webkit-touch-callout: none;
+  user-select: none;
+
   background-color: var(--primary);
+
+  /* Apply font and spacing variables */
+  line-height: var(--label-line-height);
+  margin: var(--button-margin);
+  padding: var(--button-padding);
+
+
   /* Apply colors using classes */
   &.success {
     background: var(--success);
@@ -21,6 +52,11 @@ button,
     background: var(--error);
   }
   
+  &.pseudo {
+    background-color: transparent;
+    color: inherit;
+  }
+
   &:hover,
   &:focus {
     box-shadow: var(--button-hover);
@@ -43,11 +79,6 @@ button,
     box-shadow: none;
     background: var(--dull); /* todo: add 0.6 transparency in RGBA */
   }
-
-  min-height: initial;
-  height: auto;
-  margin: var(--button-margin);
-  padding: var(--button-padding);
 }
 
 /* Toggle buttons */

@@ -5,7 +5,12 @@
 
 @import "./theme.css";
 
-@import "./core/reset.css";
+/* 
+  Make semantic html look good without classes. An amalgamation of 
+  reset AND normalize proposals of preferences for default styling
+  to make kis.css look decent across all browsers.
+*/
+@import "./core/classless.css";
 
 /*
   Get the icons from fontello:
@@ -14,12 +19,6 @@
 */
 @import "./font-icons.css";
 
-/* 
-  Make semantic html look good without classes
-  Includes default styling to make kis.css look decent without any use
-  of class tags
-*/
-@import "./core/classless.css";
 
 /*
   And then add more decorations to simple stuff

@@ -1,67 +1,44 @@
-/* Mixin for checkbox styles */
 [type="checkbox"] {
-  + .checkable::before {
-    border-radius: var(--checkbox-radius);
+  opacity: 0;
+  width: 0;
+  position: absolute;
+  display: inline-block;
+
+  + .checkable {
+    position: relative;
+    cursor: pointer;
+    padding-left: calc(var(--checkbox-size) * 1.5);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: var(--checkbox-size);
+      line-height: var(--checkbox-size);
+      color: transparent;
+      text-align: center;
+      width: var(--checkbox-size);
+      height: var(--checkbox-size);
+    }
+
+    &::before {
+      border: var(--checkbox-border);
+      border-radius: var(--checkbox-radius);
+    }
   }
 
-  + .checkable::after {
-    content: var(--checkbox-character);
-    background: none;
-    transform: scale(2) translateY(-25%);
-    visibility: hidden;
-    opacity: 0;
+  + .checkable:hover::before,
+  &:focus + .checkable::before {
+    border: 1px solid var(--primary);
   }
 
   &:checked + .checkable::after {
-    color: var(--black);
-    background: none;
-    transform: translateY(-50%);
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &:disabled + .checkable {
-    background-color: initial;
-    cursor: not-allowed;
-    pointer-events: none;
-    color: var(--dull);
-  }
-}
-
-/* Apply checkbox styles to [type=checkbox] elements */
-[type="checkbox"] {
-  min-height: initial;
-  height: auto;
-  width: auto;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: content-box;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-/* Apply checkbox styles to radio buttons as well */
-[type="radio"] {
-  + .checkable::before {
-    border-radius: var(--checkbox-radius);
-  }
-
-  + .checkable::after {
     content: var(--checkbox-character);
-    background: none;
-    transform: scale(2) translateY(-25%);
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  &:checked + .checkable::after {
-    color: var(--black);
-    background: none;
-    transform: translateY(-50%);
-    visibility: visible;
-    opacity: 1;
+    color: var(--accent--ui);
   }
 
   &:disabled + .checkable {
