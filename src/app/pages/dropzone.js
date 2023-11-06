@@ -78,6 +78,8 @@ const Three = () => {
   const thumbnail = React.createRef();
   const changeImage = showThumnail(thumbnail);
 
+  console.log({changeImage});
+
   return (
     <div>
       <label data-show-selector className="dropzone">

@@ -58,6 +58,7 @@ label.dropzone {
     background: #fff;
     border-radius: var(--radius);
     border: 1px solid #555;
+    font-size: 0.8em;
 
     &::file-selector-button {
       margin-inline-start: auto;
@@ -89,7 +90,7 @@ label.dropzone {
 }
 
 .file-upload-thumb {
-    /* border: 1px solid black; */
+    border-radius: .5em;
     width: 60px;
     height: 40px;
     background-size: cover;
