@@ -6,7 +6,8 @@ button,
 [type=button],
 [role=button] {
   cursor: pointer;
-
+  display: inline-block;
+  background-color: var(--primary);
   /* Apply colors using classes */
   &.success {
     background: var(--success);

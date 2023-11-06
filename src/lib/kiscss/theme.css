@@ -4,12 +4,14 @@
 @layer theme {
   :root {
     /* Color styles */
-    --darker: rgba(0, 0, 0, 0.5);
+    --transparency: 0.3;
+    --color-variation: 3%;
+    /* --darker: rgba(50, 50, 50, 0.5); */
+    --darker: hsl(0, 0%, 0%) var(--color-variation);
+    /* $primary: darken($torquoise, $color-variation) !default; */
 
-    /* --primary: hsl(265, 38%, 13%); */
-
+    /* --primary: color-mix(in hsl, var(--darker), var(--torquoise)); */
     --primary: color-mix(in hsl, var(--torquoise), var(--darker));
-
     --secondary: hsl(283, 6%, 45%);
     --tertiary: hsl(257, 15%, 91%);
     --light: hsl(270, 100%, 99%);
@@ -21,8 +23,6 @@
     --warning: color-mix(in hsl, var(--orange), var(--darker));
     --error: color-mix(in hsl, var(--red), var(--darker));
     --dull: color-mix(in hsl, var(--gray), var(--darker));
-
-    --transparency: 0.3;
 
     /* typography and layout spaces */
     --separation: 0.6rem;

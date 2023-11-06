@@ -13,7 +13,7 @@
     "src/app/main.js"
   ],
   "css": "dist/kis.css",
-  "browserslist": "firefox >= 118, last 2 Chrome versions, safari >= 17, not dead",
+  "browserslist": "firefox >= 118, last 2 Chrome versions, safari >= 17",
   "targets": {
     "test": {
       "source": [
