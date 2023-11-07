@@ -1,15 +1,24 @@
 /* Tooltip baseline styles */
-[data-tooltip] {
+:is([data-tooltip][data-tooltip-top],
+[data-tooltip][data-tooltip-right],
+[data-tooltip][data-tooltip-bottom],
+[data-tooltip][data-tooltip-left]) {
   position: relative;
-  z-index: 10;
-  /* Tooltips are hidden initially */
-  opacity: 0;
-  border-width: 0;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  /* Transition */
-  transition: opacity 0.6s ease, height 0s ease 0.6s;
+
+  &::after, &::before {
+    position: absolute;
+    z-index: 10;
+    /* Tooltips are hidden initially */
+    opacity: 0;
+    border-width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    /* Transition */
+    transition: opacity 0.6s ease, height 0s ease 0.6s;
+  }
+
   /* Label-like element */
   &::after {
     /* Style */
@@ -21,6 +30,7 @@
     /* Behavior */
     white-space: nowrap;
   }
+
   /* Directional small arrow */
   &::before {
     content: '';
@@ -28,6 +38,20 @@
     height: 0;
     border-width: 0;
     border-style: solid;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:hover::before,
+  &:focus::before {
+    opacity: 1;
+    border-width: 6px;
+    height: auto;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    padding: calc(var(--separation) * 0.75) calc(var(--separation) * 1.5);
   }
 }
 
