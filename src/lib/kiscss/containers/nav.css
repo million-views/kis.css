@@ -41,7 +41,6 @@ nav {
   & .menu {
     clear: both;
     max-height: 0;
-    margin-right: 0.9rem;
     transition: max-height var(--nav-timing) ease-out;
   }
 
