@@ -88,7 +88,7 @@ a:not([class]) {
   text-underline-offset: 0.15em;
 
   text-decoration-skip-ink: auto;
-  color: currentColor;
+  /* color: currentColor; */
 }
 
 /* 
@@ -188,7 +188,7 @@ p {
 */
 a {
   background-color: transparent; /* 1 */
-  color: var(--primary); /* 2 [kiscss] */
+  color: inherit; /* 2 [kiscss] */
   text-decoration: none; /* 2 [kiscss] */
 }
 
@@ -438,6 +438,7 @@ th {
 
 /* // Zebra stripes */
 tr:nth-child(even) {
-  background: rgba(var(--primary), 0.1);
+  /* background: rgba(var(--primary), 0.1); */
+  background-color: color-mix(in hsl, var(--primary), transparent 90%);
 }
 

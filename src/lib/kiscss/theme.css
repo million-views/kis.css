@@ -18,7 +18,9 @@
     --light: hsl(270, 100%, 99%);
     --accent: hsl(278, 100%, 92%);
     --accent--alt: hsl(279, 100%, 97%);
-    --accent--ui: hsl(284, 55%, 66%);
+    --accent--ui: color-mix(in hsl, var(--primary), var(--darker));
+
+    /* --accent--ui: hsl(284, 55%, 66%); */
 
     --success: color-mix(in hsl, var(--cyan), var(--darker));
     --warning: color-mix(in hsl, var(--orange), var(--darker));

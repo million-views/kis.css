@@ -6,7 +6,8 @@
   > div {
     display: block;
     padding: 0.3rem 0.3rem;
-    background: var(--green);
+    background-color: color-mix(in hsl, var(--primary), transparent 20%);
+    /* background: var(--green); */
     text-align: center;
   }
 }
@@ -14,6 +15,7 @@
 .flex.demo > div:nth-child(2n) {
   > span,
   > div {
-    background: var(--aqua);
+    background-color: color-mix(in hsl, var(--aqua), transparent 20%);
+    /* background: var(--aqua); */
   }
 }
