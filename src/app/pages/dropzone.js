@@ -26,6 +26,7 @@ import forestUrl from 'url:../../web/assets/images/forest.jpg';
   };
 </script> */
 
+
 const handler = (ref) => {
   return (e) => {
     // console.log(e);
@@ -35,19 +36,10 @@ const handler = (ref) => {
       ref.current.removeAttribute('data-show-selector');
       ref.current.style.backgroundImage = `url(${reader.result})`;
     };
+
     reader.readAsDataURL(e.target.files[0]);
   };
 };
-
-const showThumnail = (ref) => {
-  return (e) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      ref.current.style.backgroundImage = `url(${reader.result})`;
-    };
-    reader.readAsDataURL(e.target.files[0]);
-  };
-}
 
 const One = () => {
   const file = React.createRef();
@@ -76,21 +68,19 @@ const Two = () => {
 
 const Three = () => {
   const thumbnail = React.createRef();
-  const changeImage = showThumnail(thumbnail);
-
-  console.log({changeImage});
+  const changeImage = handler(thumbnail);
 
   return (
     <div>
-      <label data-show-selector className="dropzone">
+      <label data-show-selector className="dropzone" id="drop-container">
         <span>Drop files here</span>
         <span>or</span>
-        <input onChange={changeImage} name="filec" title="Drop image or click me" type="file" />
+        <input onChange={changeImage} id="filec" name="filec" title="Drop image or click me" type="file" />
         <div
           style={{ backgroundImage: ""}}
           ref={thumbnail}
           className="file-upload-thumb">
-      </div>
+        </div>
       </label>
     </div>
   );
@@ -108,3 +98,32 @@ export default () => (
     </div>
   </div>
 );
+
+// TODO: drag events not working
+// onloadend = () => {
+
+//   const dropContainer = document.getElementById("drop-container")
+//   const fileInput = document.getElementById("filec")
+  
+//   dropContainer.addEventListener("dragover", (e) => {
+//     // prevent default to allow drop
+//     e.preventDefault();
+//   }, false);
+  
+//   dropContainer.addEventListener("dragenter", () => {
+//     dropContainer.classList.add("drag-active");
+//   });
+  
+//   dropContainer.addEventListener("dragleave", () => {
+//     dropContainer.classList.remove("drag-active");
+//   });
+  
+//   dropContainer.addEventListener("drop", (e) => {
+//     e.preventDefault();
+//     dropContainer.classList.remove("drag-active");
+//     fileInput.files = e.dataTransfer.files;
+//   });    
+  
+// }
+
+

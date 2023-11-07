@@ -96,3 +96,12 @@ label.dropzone {
     background-size: cover;
     background-position: center center;
 }
+
+drop-container.drag-active {
+  background: #eee;
+  border-color: #111;
+}
+
+drop-container.drag-active .drop-title {
+  color: #222;
+}
