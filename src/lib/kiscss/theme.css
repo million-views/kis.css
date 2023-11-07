@@ -52,6 +52,7 @@
 
   /* button custom properties */
   :root {
+    --button-radius: var(--radius, initial); /* Use a fallback value if --radius is not defined */
     --button-margin: var(--control-margin, initial);
     --button-padding: var(--control-padding, initial);
     --button-hover: inset 0 0 0 99rem rgba(255, 255, 255, var(--transparency, 1));

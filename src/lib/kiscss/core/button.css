@@ -12,7 +12,7 @@ button,
   vertical-align: middle;
 
   border: 0;
-  border-radius: var(--label-radius);
+  border-radius: var(--button-radius);
 
   width: auto;
   min-height: initial;
