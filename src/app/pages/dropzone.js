@@ -27,9 +27,11 @@ import forestUrl from 'url:../../web/assets/images/forest.jpg';
 </script> */
 
 
+// currently handles only a single file
 const handler = (ref) => {
   return (e) => {
-    // console.log(e);
+    console.log(e);
+    console.log({'files': e.target.files});
     const reader = new FileReader();
     reader.onloadend = () => {
       // console.log(ref.current.style);
@@ -69,13 +71,33 @@ const Two = () => {
 const Three = () => {
   const thumbnail = React.createRef();
   const changeImage = handler(thumbnail);
+  const zone = React.createRef();
+
+  const dropHandler = (ev) => {
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+    zone.current.files = ev.dataTransfer.files;
+    // hack, knowing what changeImage does...
+    changeImage({target: {files: zone.current.files}});
+  }
+
+  const dragOverHandler = (ev) => {
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+  }
 
   return (
     <div>
-      <label data-show-selector className="dropzone" id="drop-container">
+      <label data-show-selector className="dropzone"
+        onDragOver={dragOverHandler} onDrop={dropHandler}>
         <span>Drop files here</span>
         <span>or</span>
-        <input onChange={changeImage} id="filec" name="filec" title="Drop image or click me" type="file" />
+        <input 
+          ref={zone} onChange={changeImage} 
+          id="filec" name="filec" title="Drop image or click me" 
+          type="file" 
+          onInputCapture={(e) => console.log(e.target)}
+        />
         <div
           style={{ backgroundImage: ""}}
           ref={thumbnail}
