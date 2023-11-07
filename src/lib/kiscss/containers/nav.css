@@ -67,7 +67,7 @@ nav {
       padding: var(--separation) calc(var(--separation) * 2);
 
       &:hover {
-        background-color: rgba(var(--primary), 0.3);
+        background-color: color-mix(in hsl, var(--primary), transparent 70%);
       }
     }
   }
@@ -98,28 +98,28 @@ see https://parceljs.org/languages/css/#custom-media-queries
 @custom-media --breakAt (min-width: 768px);
 
 @media (--breakAt) {
-  :is(nav, nav ul) {
+  & :is(nav, nav ul) {
     height: 3rem;
   }
 
-  nav {
-    :is(ul) {
-      :is(li) {
+  & nav {
+    & ul {
+      & li {
         float: left;
 
-        :is(a) {
+        & a {
           padding: calc(var(--separation) * 3/2) var(--separation);
         }
       }
     }
 
-    .menu {
+    & .menu {
       clear: none;
       float: right;
       max-height: none;
     }
 
-    .burger {
+    & .burger {
       display: none;
     }
   }

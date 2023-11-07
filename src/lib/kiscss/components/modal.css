@@ -2,10 +2,10 @@
   text-align: center;
 
   /* Control element to show/hide without JavaScript */
-  > input {
+  & > input {
     display: none;
 
-    ~ * {
+    & ~ * {
       /* Not visible by default */
       opacity: 0;
 
@@ -15,7 +15,7 @@
     }
   }
 
-  .overlay {
+  & .overlay {
     top: 0;
     left: 0;
     bottom: 0;
@@ -23,8 +23,9 @@
     position: fixed;
     margin: 0;
     border-radius: 0;
-    background: rgba(var(--black), calc(3 * var(--transparency)));
+    background-color: var(--dim);
     transition: var(--transition);
+    /* make sure z-index is above the rest, especially `nav` element */
     z-index: 300;
 
     &::before,
@@ -33,17 +34,12 @@
     }
 
     /* All elements that follow the overlay (the modals)... */
-    ~ * {
-      /* Can be everything included in a .card */
-      /* TODO @include card(); */
-
-      border: 0;
-
+    & ~ * {
       /* Position the contents in the middle and top of everything on the screen */
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translateX(-50%) translateY(-50%) scale(0.2, 0.2);
+      transform: translateX(-50%) translateY(-50%);
       z-index: 1000000;
 
       /* Closing effect */
@@ -52,8 +48,8 @@
   }
 
   /* Show modal when checked */
-  > input:checked {
-    ~ * {
+  & > input:checked {
+    & ~ * {
       display: block;
       opacity: 1;
       max-height: 10000px;
@@ -62,10 +58,9 @@
     }
 
     /* Grab everything in modal that is after the overlay after the input */
-    ~ .overlay ~ * {
+    & :is(~ .overlay ~ *) {
       max-height: 90%;
       overflow: auto;
-      -webkit-transform: translateX(-50%) translateY(-50%) scale(1, 1);
       transform: translateX(-50%) translateY(-50%) scale(1, 1);
     }
   }

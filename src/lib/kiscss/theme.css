@@ -8,10 +8,11 @@
     --color-variation: 3%;
     /* --darker: rgba(50, 50, 50, 0.5); */
     --darker: hsl(0, 0%, 0%) var(--color-variation);
-    /* $primary: darken($torquoise, $color-variation) !default; */
+    --dim: hsl(0, 0%, 0%, calc(var(--transparency) *3));
 
     /* --primary: color-mix(in hsl, var(--darker), var(--torquoise)); */
     --primary: color-mix(in hsl, var(--torquoise), var(--darker));
+    --primary-surface: 
     --secondary: hsl(283, 6%, 45%);
     --tertiary: hsl(257, 15%, 91%);
     --light: hsl(270, 100%, 99%);
