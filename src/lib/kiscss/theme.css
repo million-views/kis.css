@@ -14,30 +14,30 @@
   /* --background-strong: #262626; */
   --background-strong: color-mix(in hsl, var(--background), hsl(0, 0%, 80%));
 
-  --background-hover: rgb(71, 36, 25, .03); /* 3% */
-  --background-active: rgb(71, 36, 25, .06); /* 6% */
+  --background-hover: hsla(14, 48%, 19%, 0.031); /* 3% */
+  --background-active: hsla(14, 48%, 19%, 0.059); /* 6% */
 
-  --text: #1E1F21;
-  --text-strong: #171717;
-  --text-medium: #525252;
-  --text-weak: #6D6E6F;
+  --text: hsl(220, 5%, 12%);
+  --text-strong: hsl(0, 0%, 9%);
+  --text-medium: hsl(0, 0%, 32%);
+  --text-weak: hsl(210, 1%, 43%);
 
-  --border: #E4E1E0;
-  --border-medium: #d4d4d4;
-  --border-strong: #D9D6D6;
-  --border-hover: #AFABAC;
-  --border-active: #6D6E6F;
+  --border: hsl(15, 7%, 89%);
+  --border-medium: hsl(0, 0%, 83%);
+  --border-strong: hsl(0, 4%, 85%);
+  --border-hover: hsl(345, 2%, 68%);
+  --border-active: hsl(210, 1%, 43%);
 
-  --icon: #6D6E6F;
-  --icon-hover: #1E1F21;
+  --icon: hsl(210, 1%, 43%);
+  --icon-hover: hsl(220, 5%, 12%);
 
   /* brand colors */
-  --brand-background:  #07b6d5;
-  --brand-text: #FFFFFF;
-  --brand-text-medium: #a3a3a3;
-  --brand-text-weak: #d4d4d4; /* TODO: added this for dark background text */
+  --brand-background:  hsl(189, 94%, 43%);
+  --brand-text: hsl(0, 0%, 100%);
+  --brand-text-medium: hsl(0, 0%, 64%);
+  --brand-text-weak: hsl(0, 0%, 83%); /* TODO: added this for dark background text */
 
-  --brand-border: #07b6d5;
+  --brand-border: hsl(189, 94%, 43%);
 
   /* keep it simple! */
   /* https://web.mit.edu/jmorzins/www/fonts.html */
@@ -150,8 +150,8 @@
   --tracking-s: -0.075ch;
 
   --generic-shadow: 
-    0px 1px 2px rgba(60, 64, 67, 0.3),  
-    0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+    0px 1px 2px hsla(206, 6%, 25%, 0.302),  
+    0px 2px 6px 2px hsla(206, 6%, 25%, 0.149);
   
   /** spacing customizations */
   --wrapper-max-width: 85rem;
@@ -187,12 +187,12 @@
     /* form and flow control spaces */
     --control-margin: 0.3rem;
     --control-padding: 0.6rem 0.6rem;
-    --control-background: #fff;
+    --control-background: hsl(0, 0%, 100%);
 
     /* shapes */
     --radius: 0.25rem;
-    --border: 1px solid #ccc;
-    --shadow: 1px 3px 0.3rem rgba(var(--black), var(--transparency));
+    --border: 1px solid hsl(0, 0%, 80%);
+    --shadow: 1px 3px 0.3rem hsla(var(--black), var(--transparency));
 
     /* transitions */
     --transition: all 0.3s;
@@ -211,9 +211,9 @@
     --button-radius: var(--radius, initial); /* Use a fallback value if --radius is not defined */
     --button-margin: var(--control-margin, initial);
     --button-padding: var(--control-padding, initial);
-    --button-hover: inset 0 0 0 99rem rgba(255, 255, 255, var(--transparency, 1));
-    --button-click: inset 0 0 0 99rem rgba(0, 0, 0, var(--transparency, 1));
-    --button-pseudo-hover: inset 0 0 0 99rem rgba(0, 0, 0, calc(var(--transparency, 1) / 2));
+    --button-hover: inset 0 0 0 99rem hsla(var(--white) var(--transparency, 1));
+    --button-click: inset 0 0 0 99rem hsla(var(--black) var(--transparency, 1));
+    --button-pseudo-hover: inset 0 0 0 99rem hsla(var(--white) calc(var(--transparency, 1) / 2));
     /* --dull: rgba(128, 128, 128, 0.6); */
   }
 
@@ -228,15 +228,15 @@
   /* radio custom properties */
   :root {
     --radio-size: 1rem;
-    --radio-border: 1px solid #aaa;
-    --radio-background: #555;
+    --radio-border: 1px solid hsl(0, 0%, 67%);
+    --radio-background: hsl(0, 0%, 33%);
   }
 
   /* checkbox custom properties */
   :root {
     --checkbox-size: 1rem;
-    --checkbox-border: 1px solid #aaa;
-    --checkbox-background: #555;
+    --checkbox-border: 1px solid hsl(0, 0%, 67%);
+    --checkbox-background: hsl(0, 0%, 33%);
     --checkbox-radius: var(--radius, initial);
     --checkbox-character: '\2714';
   }
@@ -249,7 +249,7 @@
 
   /* nav custom properties */
   :root {
-    --nav-shadow: var(--shadow, 1px 1px 4px 0 red);
+    --nav-shadow: var(--shadow, 1px 1px 4px 0 hsl(0, 100%, 50%)0000);
     --nav-position: fixed;
     --nav-item-margin: 0.3rem var(--separation, initial);
     --nav-timing: 0.3s;
@@ -274,9 +274,9 @@
   /* see https://css-tricks.com/managing-multiple-backgrounds-with-custom-properties/ for a working workaround */
   :root {
     --dropzone-aspect-ratio: 16 / 9;
-    --dropzone-background-color: #ddd;
+    --dropzone-background-color: hsl(0, 0%, 87%);
     --dropzone-background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNjQwIiB2ZXJzaW9uPSIxLjEiPjxnIHN0eWxlPSJmaWxsOiMzMzMiPjxwYXRoIGQ9Ik0gMTg3IDIzMCBDIDE3NSAyMzAgMTY5IDI0MCAxNjUgMjUyIEwgMTY1IDMwMCBMIDE2NSA0MDggQyAxNjUgNDIwIDE3NSA0MzAgMTg3IDQzMCBMIDQ2MyA0MzAgQyA0NzUgNDMwIDQ4NSA0MjAgNDg1IDQwOCBMIDQ4NSAzMDAgTCA0ODUgMjUyIEMgNDg1IDI0MCA0NzUgMjMwIDQ2MyAyMzAgTCAxODcgMjMwIHogTSAzNjAgMjU2IEEgNzAgNzIgMCAwIDEgNDMwIDMyOCBBIDcwIDcyIDAgMCAxIDM2MCA0MDAgQSA3MCA3MiAwIDAgMSAyOTAgMzI4IEEgNzAgNzIgMCAwIDEgMzYwIDI1NiB6Ii8+PGNpcmNsZSBjeD0iMzYwIiBjeT0iMzMwIiByPSI0MSIvPjxwYXRoIGQ9Im0yMDUgMjI1IDUtMTAgMjAgMCA1IDEwLTMwIDAiLz48cGF0aCBkPSJNMjg1IDIwMEwyNzAgMjI1IDM3NiAyMjUgMzYxIDIwMCAyODUgMjAwek0zMTAgMjA1TDMzNyAyMDUgMzM3IDIxOCAzMTAgMjE4IDMxMCAyMDV6Ii8+PHBhdGggZD0ibTQwNSAyMjUgNS0xMCAyMCAwIDUgMTAtMzAgMCIvPjwvZz48L3N2Zz4=);
-    --dropzone-border: 2px dashed #555;
+    --dropzone-border: 2px dashed hsl(0, 0%, 33%);
     --dropzone-radius: var(--label-radius);
     --dropzone-margin: var(--button-margin);
   }
