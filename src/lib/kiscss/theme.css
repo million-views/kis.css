@@ -3,16 +3,169 @@
 
 @layer theme {
   :root {
+  /* asana flavored design tokens: todo, find the video */
+
+  /* the palette for the 10%; sentiment brand */
+  /* the palette for the 30%; sentiment ????? */
+  /* the palette for the 60%; sentiment neutral/default */
+  --background: var(--white);
+  --background-medium: color-mix(in hsl, var(--background), hsl(0, 0%, 90%));
+  /* --background-medium: #F6F8F9; */
+  /* --background-strong: #262626; */
+  --background-strong: color-mix(in hsl, var(--background), hsl(0, 0%, 80%));
+
+  --background-hover: rgb(71, 36, 25, .03); /* 3% */
+  --background-active: rgb(71, 36, 25, .06); /* 6% */
+
+  --text: #1E1F21;
+  --text-strong: #171717;
+  --text-medium: #525252;
+  --text-weak: #6D6E6F;
+
+  --border: #E4E1E0;
+  --border-medium: #d4d4d4;
+  --border-strong: #D9D6D6;
+  --border-hover: #AFABAC;
+  --border-active: #6D6E6F;
+
+  --icon: #6D6E6F;
+  --icon-hover: #1E1F21;
+
+  /* brand colors */
+  --brand-background:  #07b6d5;
+  --brand-text: #FFFFFF;
+  --brand-text-medium: #a3a3a3;
+  --brand-text-weak: #d4d4d4; /* TODO: added this for dark background text */
+
+  --brand-border: #07b6d5;
+
+  /* keep it simple! */
+  /* https://web.mit.edu/jmorzins/www/fonts.html */
+  --font-family-base: Inter, Helvetica, sans-serif;
+  --font-family-sans: Helvetica, sans-serif;
+  --font-family-serif: "Times New Roman", serif;
+  --font-family-mono: "Courier New", monospace;
+
+  /* get this from https://utopia.fyi/space/calculator/ */
+  --space-3xs: clamp(0.25rem, calc(0.19rem + 0.24vw), 0.38rem);
+  --space-2xs: clamp(0.50rem, calc(0.39rem + 0.48vw), 0.75rem);
+  --space-xs: clamp(0.75rem, calc(0.58rem + 0.73vw), 1.13rem);
+  --space-s: clamp(1.00rem, calc(0.77rem + 0.97vw), 1.50rem);
+  --space-m: clamp(1.50rem, calc(1.16rem + 1.45vw), 2.25rem);
+  --space-l: clamp(2.00rem, calc(1.55rem + 1.94vw), 3.00rem);
+  --space-xl: clamp(3.00rem, calc(2.32rem + 2.91vw), 4.50rem);
+  --space-2xl: clamp(4.00rem, calc(3.09rem + 3.88vw), 6.00rem);
+  --space-3xl: clamp(6.00rem, calc(4.64rem + 5.82vw), 9.00rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.02rem + 0.97vw), 0.75rem);
+  --space-2xs-xs: clamp(0.50rem, calc(0.22rem + 1.21vw), 1.13rem);
+  --space-xs-s: clamp(0.75rem, calc(0.41rem + 1.45vw), 1.50rem);
+  --space-s-m: clamp(1.00rem, calc(0.43rem + 2.42vw), 2.25rem);
+  --space-m-l: clamp(1.50rem, calc(0.82rem + 2.91vw), 3.00rem);
+  --space-l-xl: clamp(2.00rem, calc(0.86rem + 4.85vw), 4.50rem);
+  --space-xl-2xl: clamp(3.00rem, calc(1.64rem + 5.82vw), 6.00rem);
+  --space-2xl-3xl: clamp(4.00rem, calc(1.73rem + 9.70vw), 9.00rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.00rem, calc(0.09rem + 3.88vw), 3.00rem);
+
+  /* get this from https://utopia.fyi/type/calculator/ */
+  --size-2xs: clamp(0.69rem, calc(0.57rem + 0.52vw), 0.96rem);
+  --size-xs: clamp(0.83rem, calc(0.67rem + 0.71vw), 1.20rem);
+  --size-s: clamp(1.00rem, calc(0.77rem + 0.97vw), 1.50rem);
+  --size-m: clamp(1.20rem, calc(0.89rem + 1.31vw), 1.88rem);
+  --size-l: clamp(1.44rem, calc(1.03rem + 1.75vw), 2.34rem);
+  --size-xl: clamp(1.73rem, calc(1.18rem + 2.33vw), 2.93rem);
+  --size-2xl: clamp(2.07rem, calc(1.35rem + 3.08vw), 3.66rem);
+  --size-3xl: clamp(2.49rem, calc(1.54rem + 4.05vw), 4.58rem);
+  /* custom size to scale faster between large and 2xl */
+  --size-l-2xl: clamp(1.44rem, calc(1.03rem + 1.83vw), 3.66rem);
+
+  /** shadows **/
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+
+  --shadow: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --shadow-weak: 
+    0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+  --shadow-medium: 
+    0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-strong: 
+    0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%));
+  --shadow-hover: 
+    0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-strong-hover: 
+    0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+    0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
+    0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  
+    /* --ring-offset-shadow: 0 0 hsla(0, 0%, 0%, 0);
+    --ring-shadow: 0 0 hsla(0, 0%, 0%, 0);
+    --shadow: 0 25px 50px -12px hsla(0, 0%, 0%, 0.5); */
+    /* shadow with more radius and spread */
+  --shadow-large: 
+    0 0 hsla(0, 0%, 0%, 0),
+    0 0 hsla(0, 0%, 0%, 0),
+    0 25px 50px -12px hsla(0, 0%, 0%, 0.5);
+
+  /** TODO: rework the variable names below */
+
+  --gutter: var(--space-s);
+
+  --border-radius: var(--size-s);
+
+  /* TODO: wip borders */
+
+  --border-radius-xs: var(--size-xs);
+  --border-radius-m: var(--size-m);
+  --border-radius-rounded: var(--size-l);
+
+
+  --transition-base: 250ms ease;
+  --transition-movement: 200ms linear;
+  --transition-fade: 200ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
+  
+  --tracking: -0.05ch;
+  --tracking-s: -0.075ch;
+
+  --generic-shadow: 
+    0px 1px 2px rgba(60, 64, 67, 0.3),  
+    0px 2px 6px 2px rgba(60, 64, 67, 0.15);
+  
+  /** spacing customizations */
+  --wrapper-max-width: 85rem;
+  --region-space-inline: 0px;
+  --region-space-block: var(--space-m);
+/**********************************************************************/
     /* Color styles */
     --transparency: 0.3;
     --color-variation: 3%;
-    /* --darker: rgba(50, 50, 50, 0.5); */
     --darker: hsl(0, 0%, 0%) var(--color-variation);
     --dim: hsl(0, 0%, 0%, calc(var(--transparency) *3));
-
-    /* --primary: color-mix(in hsl, var(--darker), var(--torquoise)); */
     --primary: color-mix(in hsl, var(--torquoise), var(--darker));
-    --primary-surface: 
+    /* --primary: var(--background-medium); */
+    /* --primary-surface:  */
     --secondary: hsl(283, 6%, 45%);
     --tertiary: hsl(257, 15%, 91%);
     --light: hsl(270, 100%, 99%);
