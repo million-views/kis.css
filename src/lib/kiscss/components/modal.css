@@ -1,3 +1,14 @@
+/*
+some ideas borrowed from: 
+  - https://begin.com/blog/posts/2022-10-18-an-accessible-modal-without-javascript
+  - TODO: use :has selector and try to simplify
+  - advanced use cases such as detecting enter and escape keys 
+    require JS; at which point there is no compelling reason to
+    avoid the browser provided `dialog` element... if there is no JS
+    then the idea of having modal simply doesn't make sense as a UI
+    element. Instead the damn thing should just be a form that is
+    visible from the get go.... hmmm...
+*/
 .modal {
   text-align: center;
 

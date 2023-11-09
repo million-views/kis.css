@@ -214,7 +214,6 @@
     --button-hover: inset 0 0 0 99rem hsla(var(--white) var(--transparency, 1));
     --button-click: inset 0 0 0 99rem hsla(var(--black) var(--transparency, 1));
     --button-pseudo-hover: inset 0 0 0 99rem hsla(var(--white) calc(var(--transparency, 1) / 2));
-    /* --dull: rgba(128, 128, 128, 0.6); */
   }
 
   /* select custom properties */

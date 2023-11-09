@@ -11,7 +11,7 @@ export default () => (
     <div className="modal">
       <input id="modal-test" type="checkbox" />
       <label htmlFor="modal-test" className="overlay" />
-      <article class="card">
+      <article className="card">
         <header>
           <h3>Great offer</h3>
           <label htmlFor="modal-test" className="close">×</label>
