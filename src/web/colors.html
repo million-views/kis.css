@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color space and design tokens</title>
+  <style>
+    :root {
+      /* Base HSL colors for sentiments */
+      --color-success: hsl(140 40% 50%);
+      --color-warning: hsl(50 100% 50%);
+      --color-danger: hsl(0 100% 50%);
+      --color-upsell: hsl(280 50% 60%);
+      --color-beta: hsl(30 100% 50%);
+      --color-hero: hsl(240 100% 50%);
+      --color-brand: hsl(210 100% 50%);
+
+      /* Adjustments percentages for prominence levels as decimals */
+      --prominence-weak: .75;
+      --prominence-medium: .50;
+      --prominence-strong: .40;
+      --prominence-stronger: .30;
+      --prominence-strongest: .20;
+
+      /* Color tokens for hero sentiment */
+      --hero-text: hsl(from var(--color-hero) h s calc(l * var(--prominence-medium)));
+      --hero-background: hsl(from var(--color-hero) h s calc(l * var(--prominence-weak)));
+
+      /* Tokens for interaction states */
+      --hero-background-hover: hsl(from var(--hero-background) h s calc(l + .10));
+      --hero-background-active: hsl(from var(--hero-background) h s calc(l - .10));
+      --hero-background-disabled: hsl(from var(--hero-background) calc(h * 1.2) s l);
+      --hero-background-focus: hsl(from var(--color-brand) h s calc(l + .15));
+    }
+
+
+    button {
+      color: var(--hero-text);
+      background: var(--hero-background);
+    }
+
+    button:hover {
+      background: var(--hero-background-hover);
+    }
+
+    button:active {
+      background: var(--hero-background-active);
+    }
+
+    button:disabled {
+      background: var(--hero-background-disabled);
+    }
+
+    button:focus-within {
+      outline: 3px dashed var(--hero-background-focus);
+    }
+  </style>
+</head>
+
+<body>
+  <button>
+    <header>
+      <h1>Hello, world!</h1>
+      <a href="/">Sign Up</a>
+    </header>
+  </button>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Design Token Test Page</title>
+<style>
+  :root {
+    /* Base sentiment colors */
+    --color-success: hsl(120, 100%, 50%);
+    --color-warning: hsl(60, 100%, 50%);
+    --color-danger: hsl(0, 100%, 50%);
+    --color-hero: hsl(240, 100%, 50%);
+    
+    /* Prominence adjustments */
+    --prominence-weak: 0.5;
+    --prominence-strong: 1.5;
+    
+    /* Usage adjustments */
+    --usage-background-lighten: 0.1;
+    --usage-text-darken: -0.1;
+    
+    /* Interaction states */
+    --interaction-hover-opacity: 0.8;
+    --interaction-focus-opacity: 0.7;
+
+    /* Composed tokens */
+    --success-background: hsl(from var(--color-success) h calc(s * var(--prominence-weak)) calc(l + var(--usage-background-lighten)));
+    --warning-background: hsl(from var(--color-warning) h calc(s * var(--prominence-weak)) calc(l + var(--usage-background-lighten)));
+    --danger-background: hsl(from var(--color-danger) h calc(s * var(--prominence-weak)) calc(l + var(--usage-background-lighten)));
+    --hero-background: hsl(from var(--color-hero) h calc(s * var(--prominence-strong)) calc(l + var(--usage-background-lighten)));
+
+    /* Interaction adjustments */
+    --success-background-hover: hsl(from var(--success-background) h s l / var(--interaction-hover-opacity));
+    --warning-background-hover: hsl(from var(--warning-background) h s l / var(--interaction-hover-opacity));
+    --danger-background-hover: hsl(from var(--danger-background) h s l / var(--interaction-hover-opacity));
+    --hero-background-hover: hsl(from var(--hero-background) h s l / var(--interaction-hover-opacity));
+  }
+
+  section {
+    padding: 20px;
+    margin-bottom: 10px;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+
+  section:hover {
+    cursor: pointer;
+  }
+
+  .success {
+    background: var(--success-background);
+  }
+
+  .success:hover {
+    background: var(--success-background-hover);
+  }
+
+  .warning {
+    background: var(--warning-background);
+  }
+
+  .warning:hover {
+    background: var(--warning-background-hover);
+  }
+
+  .danger {
+    background: var(--danger-background);
+  }
+
+  .danger:hover {
+    background: var(--danger-background-hover);
+  }
+
+  .hero {
+    background: var(--hero-background);
+  }
+
+  .hero:hover {
+    background: var(--hero-background-hover);
+  }
+</style>
+</head>
+<body>
+
+<section class="success">
+  <h2>Success Section</h2>
+  <p>This section represents a successful action or state.</p>
+</section>
+
+<section class="warning">
+  <h2>Warning Section</h2>
+  <p>This section represents a warning message or state.</p>
+</section>
+
+<section class="danger">
+  <h2>Danger Section</h2>
+  <p>This section represents a dangerous or error state.</p>
+</section>
+
+<section class="hero">
+  <h2>Hero Section</h2>
+  <p>This section is styled with the hero sentiment, for standout content.</p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprehensive Color Design Tokens Test Page</title>
+<style>
+  :root {
+    /* Base sentiment colors */
+    --color-success: hsl(120, 70%, 40%);
+    --color-warning: hsl(30, 100%, 50%);
+    --color-danger: hsl(0, 100%, 50%);
+    --color-upsell: hsl(50, 100%, 50%);
+    --color-beta: hsl(280, 50%, 50%);
+    --color-hero: hsl(240, 100%, 50%);
+    --color-brand: hsl(210, 100%, 50%);
+    --color-default: hsl(0, 0%, 95%); /* Light grey for default sentiment */
+    
+    /* Prominence levels */
+    --prominence-weak: 0.8;
+    --prominence-medium: 1; /* Default */
+    --prominence-strong: 1.2;
+    --prominence-stronger: 1.4;
+    --prominence-strongest: 1.6;
+
+    /* Interaction states */
+    --interaction-hover: 1.1;
+    --interaction-active: 0.9;
+    --interaction-disabled: 0.5;
+    --interaction-focus: 1.25;
+    --interaction-default: 1; /* Default */
+
+    /* Composed tokens */
+    --background: var(--color-default);
+    --text: hsl(from var(--color-default) h s calc(l * 0.2));
+    --border: hsl(from var(--color-default) h s calc(l * 0.75));
+    --icon: hsl(from var(--color-default) h s calc(l * 0.6));
+
+    /* Applying sentiments with default prominence and interaction */
+    --success-background: hsl(from var(--color-success) h s l);
+    --warning-background: hsl(from var(--color-warning) h s l);
+    --danger-background: hsl(from var(--color-danger) h s l);
+
+    /* Sentiment with prominence variation */
+    --success-strong-background: hsl(from var(--color-success) h calc(s * var(--prominence-strong)) l);
+    --success-weak-background: hsl(from var(--color-success) h calc(s * var(--prominence-weak)) l);
+
+    /* Interaction states */
+    --success-background-hover: hsl(from var(--success-background) h s calc(l * var(--interaction-hover)));
+
+    /* Default sentiment with an interaction */
+    --background-hover: hsl(from var(--background) h s calc(l * var(--interaction-hover)));
+  }
+
+  .box {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: black;
+    background: var(--background);
+    border: 1px solid var(--border);
+    transition: background-color 0.3s ease;
+  }
+
+  .box:hover {
+    background: var(--background-hover);
+  }
+
+  .success {
+    background: var(--success-background);
+  }
+
+  .success:hover {
+    background: var(--success-background-hover);
+  }
+
+  .success-strong {
+    background: var(--success-strong-background);
+  }
+
+  .success-weak {
+    background: var(--success-weak-background);
+  }
+
+  /* ... Additional classes for other sentiments and prominence levels ... */
+</style>
+</head>
+<body>
+
+<div class="box success">
+  <h2>Success Default</h2>
+  <p>This box uses the success sentiment with default prominence.</p>
+</div>
+
+<div class="box success-strong">
+  <h2>Success Strong</h2>
+  <p>This box uses the success sentiment with strong prominence.</p>
+</div>
+
+<div class="box success-weak">
+  <h2>Success Weak</h2>
+  <p>This box uses the success sentiment with weak prominence.</p>
+</div>
+
+<!-- Additional divs for other sentiments and prominences would follow... -->
+<section class="box warning">
+  <h2>Warning Section</h2>
+  <p>This section represents a warning message or state.</p>
+</section>
+
+<section class="box danger">
+  <h2>Danger Section</h2>
+  <p>This section represents a dangerous or error state.</p>
+</section>
+
+<section class="box hero">
+  <h2>Hero Section</h2>
+  <p>This section is styled with the hero sentiment, for standout content.</p>
+</section>
+
+</body>
+</html>
