@@ -50,7 +50,7 @@
 
   :root {
     /* sentiment colors, pick from the color palette */
-    --default: var(--silver);
+    --default: var(--black);
     --success: var(--green);
     --warning: var(--orange);
     --danger: var(--red);
@@ -63,7 +63,7 @@
     /* todo */
 
     /* Composed tokens for "usage" for the default sentiment */
-    --background: var(--default);
+    --background: var(--silver);
     --text: hsl(from var(--default) h s calc(l * 0.2));
     --border: hsl(from var(--default) h s calc(l * 0.75));
     --icon: hsl(from var(--default) h s calc(l * 0.6));
@@ -71,24 +71,35 @@
     /* Composed tokens for "interaction" for the default sentiment */
     --background-hover: hsl(from var(--background) h s calc(l * var(--interaction-default)));
     /* todo more interaction state tokens for the default sentiment */
-/**********************************************************************/
 
-    /* Applying sentiments with default prominence and interaction */
-    --success-background: hsl(from var(--color-success) h s l);
-    --warning-background: hsl(from var(--color-warning) h s l);
-    --danger-background: hsl(from var(--color-danger) h s l);
+/********************* SUCCESS SENTIMENT *******************************************/
+    /* tokens for success sentiment */
+
+    /* success-usage */
+    --success-background: hsl(from var(--success) h s l); 
+    --success-text: hsl(from var(--success) h s calc(l * 0.2));
+    --success-border: hsl(from var(--success) h s calc(l * 0.75));
+    --success-icon: hsl(from var(--success) h s calc(l * 0.6));
 
     /* Sentiment with prominence variation */
-    --success-strong-background: hsl(from var(--color-success) h calc(s * var(--prominence-strong)) l);
-    --success-weak-background: hsl(from var(--color-success) h calc(s * var(--prominence-weak)) l);
+    --success-weak-background: hsl(from var(--success) h calc(s * var(--prominence-weak)) l);
+    --success-medium-background: hsl(from var(--success) h calc(s * var(--prominence-medium)) l);
+    --success-strong-background: hsl(from var(--success) h calc(s * var(--prominence-strong)) l);
 
     /* Interaction states */
     --success-background-hover: hsl(from var(--success-background) h s calc(l * var(--interaction-hover)));
+    --success-weak-background-hover: hsl(from var(--success-weak-background) h s calc(l * var(--interaction-hover)));
+    --success-medium-background-hover: hsl(from var(--success-medium-background) h s calc(l * var(--interaction-hover)));
+    --success-strong-background-hover: hsl(from var(--success-strong-background) h s calc(l * var(--interaction-hover)));
+
+/********************* WARNING SENTIMENT *******************************************/
+    --warning-background: hsl(from var(--color-warning) h s l);
+    --danger-background: hsl(from var(--color-danger) h s l);
   }
 
   body {
     color: var(--text);
-    background-color: var(--background);
+    background-color: red;  /*var(--background)*/;
     border-color: var(--border);
   }
 
@@ -109,6 +120,22 @@
 
   .success:hover {
     background: var(--success-background-hover);
+  }
+
+  .success-weak:hover {
+    background: var(--success-weak-background-hover);
+  }
+
+  .success-medium:hover {
+    background: var(--success-medium-background-hover);
+  }
+
+  .success-strong:hover {
+    background: var(--success-strong-background-hover);
+  }
+
+  .success-medium {
+    background: var(--success-medium-background);
   }
 
   .success-strong {
@@ -134,15 +161,22 @@
   <p>This box uses the success sentiment with default prominence.</p>
 </div>
 
+<div class="box success-weak">
+  <h2>Success Weak</h2>
+  <p>This box uses the success sentiment with weak prominence.</p>
+</div>
+
+<div class="box success-medium">
+  <h2>Success Medium</h2>
+  <p>This box uses the success sentiment with medium prominence.</p>
+</div>
+
 <div class="box success-strong">
   <h2>Success Strong</h2>
   <p>This box uses the success sentiment with strong prominence.</p>
 </div>
 
-<div class="box success-weak">
-  <h2>Success Weak</h2>
-  <p>This box uses the success sentiment with weak prominence.</p>
-</div>
+
 
 <!-- Additional divs for other sentiments and prominences would follow... -->
 <section class="box warning">
