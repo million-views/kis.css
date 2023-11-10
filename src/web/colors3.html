@@ -6,35 +6,72 @@
 <title>Comprehensive Color Design Tokens Test Page</title>
 <style>
   :root {
-    /* Base sentiment colors */
-    --color-success: hsl(120, 70%, 40%);
-    --color-warning: hsl(30, 100%, 50%);
-    --color-danger: hsl(0, 100%, 50%);
-    --color-upsell: hsl(50, 100%, 50%);
-    --color-beta: hsl(280, 50%, 50%);
-    --color-hero: hsl(240, 100%, 50%);
-    --color-brand: hsl(210, 100%, 50%);
-    --color-default: hsl(0, 0%, 95%); /* Light grey for default sentiment */
-    
-    /* Prominence levels */
-    --prominence-weak: 0.8;
-    --prominence-medium: 1; /* Default */
+    /** base color palette **/
+    /* cool */
+    --aqua: hsl(180, 100%, 50%);       /* Aqua is typically a bright cyan */
+    --cyan: hsl(180, 100%, 50%);       /* Cyan, pure color halfway between blue and green */
+    --blue: hsl(240, 100%, 50%);       /* Standard blue */
+    --navy: hsl(240, 100%, 25%);       /* Navy, darker shade of blue */
+    --teal: hsl(180, 50%, 40%);        /* Teal, a deeper cyan-green color */
+    --turquoise: hsl(174, 72%, 56%);   /* Turquoise, slightly greenish shade of cyan */
+    --green: hsl(120, 100%, 25%);      /* Green, vibrant and deep */
+    --olive: hsl(60, 100%, 25%);       /* Olive, darker yellow-green, less saturated */
+    --lime: hsl(75, 100%, 50%);        /* Lime, bright and vivid green */
+
+    /* warm */
+    --yellow: hsl(60, 100%, 50%);      /* Bright yellow */
+    --orange: hsl(39, 100%, 50%);      /* Orange, rich and vivid */
+    --red: hsl(0, 100%, 50%);          /* Pure red */
+    --fuchsia: hsl(300, 100%, 50%);    /* Fuchsia, a purplish-red or pinkish-purple */
+    --purple: hsl(270, 50%, 40%);      /* Purple, more subdued and darker */
+    --maroon: hsl(0, 100%, 25%);       /* Maroon, a dark red */
+
+    /* grayscale */
+    --white: hsl(0, 0%, 100%);         /* Pure white */
+    --silver: hsl(0, 0%, 75%);         /* Silver, light gray */
+    --gray: hsl(0, 0%, 50%);           /* Medium gray */
+    --black: hsl(0, 0%, 0%);           /* Pure black */
+
+    /* prominence fudge */
+    --prominence-default: 1; /* default */
+    --prominence-weak: 0.7;
+    --prominence-medium: .9;
     --prominence-strong: 1.2;
     --prominence-stronger: 1.4;
     --prominence-strongest: 1.6;
 
-    /* Interaction states */
+    /* interaction fudge */
+    --interaction-default: 1.1; /* default */
     --interaction-hover: 1.1;
     --interaction-active: 0.9;
     --interaction-disabled: 0.5;
     --interaction-focus: 1.25;
-    --interaction-default: 1; /* Default */
+  }
 
-    /* Composed tokens */
-    --background: var(--color-default);
-    --text: hsl(from var(--color-default) h s calc(l * 0.2));
-    --border: hsl(from var(--color-default) h s calc(l * 0.75));
-    --icon: hsl(from var(--color-default) h s calc(l * 0.6));
+  :root {
+    /* sentiment colors, pick from the color palette */
+    --default: var(--silver);
+    --success: var(--green);
+    --warning: var(--orange);
+    --danger: var(--red);
+    --upsell: var(--yellow);
+    --beta: var(--purple);
+    --hero: var(--blue);
+    --brand: hsl(from var(--teal) calc(h + 30) calc(s + .5) calc(l - .1));
+    
+    /* Composed tokens for "prominence" for the default sentiment */
+    /* todo */
+
+    /* Composed tokens for "usage" for the default sentiment */
+    --background: var(--default);
+    --text: hsl(from var(--default) h s calc(l * 0.2));
+    --border: hsl(from var(--default) h s calc(l * 0.75));
+    --icon: hsl(from var(--default) h s calc(l * 0.6));
+
+    /* Composed tokens for "interaction" for the default sentiment */
+    --background-hover: hsl(from var(--background) h s calc(l * var(--interaction-default)));
+    /* todo more interaction state tokens for the default sentiment */
+/**********************************************************************/
 
     /* Applying sentiments with default prominence and interaction */
     --success-background: hsl(from var(--color-success) h s l);
@@ -47,16 +84,17 @@
 
     /* Interaction states */
     --success-background-hover: hsl(from var(--success-background) h s calc(l * var(--interaction-hover)));
+  }
 
-    /* Default sentiment with an interaction */
-    --background-hover: hsl(from var(--background) h s calc(l * var(--interaction-hover)));
+  body {
+    color: var(--text);
+    background-color: var(--background);
+    border-color: var(--border);
   }
 
   .box {
     padding: 10px;
     margin-bottom: 10px;
-    color: black;
-    background: var(--background);
     border: 1px solid var(--border);
     transition: background-color 0.3s ease;
   }
@@ -86,6 +124,11 @@
 </head>
 <body>
 
+<div class="box">
+  <h2>Default</h2>
+  <p>This box uses the default sentiment with default prominence and default interaction.</p>
+</div>
+  
 <div class="box success">
   <h2>Success Default</h2>
   <p>This box uses the success sentiment with default prominence.</p>
